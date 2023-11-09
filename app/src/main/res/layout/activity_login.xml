@@ -58,11 +58,19 @@
             android:layout_marginTop="125dp"/>
         
         <LinearLayout
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="200dp"
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#FEEBDC"
+                android:contentDescription="Get Started"
+                android:layout_height="wrap_content"
+                android:src="@drawable/buttonSplash"/>
 
             <TextView
                 android:textAlignment="center"
