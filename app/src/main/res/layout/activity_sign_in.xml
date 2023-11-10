@@ -32,22 +32,60 @@
             android:layout_width="430dp"
             android:layout_height="500dp"
             android:src="@drawable/circlerevamp"/>
-        
+
+
+
+
+
         <FrameLayout
             android:layout_width="320dp"
             android:layout_height="392dp"
-            android:elevation="20dp"
             android:layout_gravity="center"
             android:background="@drawable/frame_login_signup"
-            android:id="@+id/frame_login_signup">
+            android:elevation="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:layout_weight="50"
+                    android:background="@drawable/login_button"
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Up"
+                    android:layout_weight="50"
+                    android:background="@drawable/signup_button"
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="342dp"
+                android:layout_marginTop="50dp"
+                android:id="@+id/frame_login_signup">
+
+            </FrameLayout>
+
+
+
+
+
 
 
         </FrameLayout>
+
+
 
         
         
 
     </FrameLayout>
+
 
 
 
