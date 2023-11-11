@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FEEBDC"
+    android:background="@color/orange"
     tools:context=".login.login2">
 
     <FrameLayout
@@ -78,7 +78,7 @@
             android:layout_marginTop="25dp"
             android:layout_width="430dp"
             android:layout_height="500dp"
-            android:src="@drawable/circleorange"/>
+            android:src="@drawable/circlerevamp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
