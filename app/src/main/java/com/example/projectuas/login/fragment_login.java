@@ -1,5 +1,6 @@
 package com.example.projectuas.login;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.projectuas.R;
 
@@ -57,10 +61,40 @@ public class fragment_login extends Fragment {
         }
     }
 
+    private EditText userName, password;
+    private Button login;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
+        userName = view.findViewById(R.id.username);
+        password = view.findViewById(R.id.password);
+        login = view.findViewById(R.id.login_btn);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user_name, user_password;
+                user_name = userName.getText().toString();
+                user_password = password.getText().toString();
+
+                boolean isEmpty = false;
+//                Set error jika terdapat form yang kosong
+                if(user_name.isEmpty()){
+                    userName.setError("Username Harus Diisi!");
+                    isEmpty = true;
+                }
+                if(user_password.isEmpty()){
+                    password.setError("Password Harus Diisi!");
+                }
+
+                Context context = getActivity();
+//                Jika Tidak kosong maka lakukan autentikasi
+                if(isEmpty == false){
+                    Toast.makeText(context, "Execute Proses Autentikasi", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        return view;
     }
 }

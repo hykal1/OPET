@@ -1,5 +1,6 @@
 package com.example.projectuas.login;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.projectuas.R;
 
@@ -57,10 +61,61 @@ public class fragment_signup extends Fragment {
         }
     }
 
+    private EditText userName, email, password, confirm_password;
+    private Button signUp;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signup, container, false);
+        View view = inflater.inflate(R.layout.fragment_signup, container, false);
+        userName = view.findViewById(R.id.username);
+        email = view.findViewById(R.id.email);
+        password = view.findViewById(R.id.password);
+        confirm_password = view.findViewById(R.id.password_confirm);
+        signUp = view.findViewById(R.id.sign_up);
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user_name, user_email, user_password, user_conf_password;
+                user_name = userName.getText().toString();
+                user_email = email.getText().toString();
+                user_password = password.getText().toString();
+                user_conf_password = confirm_password.getText().toString();
+
+
+                boolean isEmpty = false;
+
+//                Set error jika terdapat form yang kosong
+                if(user_name.isEmpty()){
+                    userName.setError("Username Harus Diisi!");
+                    isEmpty = true;
+                }
+                if(user_email.isEmpty()){
+                    email.setError("Email Harus Diisi!");
+                    isEmpty = true;
+                }
+                if(user_password.isEmpty()){
+                    password.setError("Password Harus Diisi!");
+                    isEmpty = true;
+                }
+                if(user_conf_password.isEmpty()){
+                    confirm_password.setError("Password Harus Diisi!");
+                    isEmpty = true;
+                }
+
+                Context context = getActivity();
+//                Jika password == confirm password maka buat akun
+                if(isEmpty == false){
+                    if(user_password.equals(user_conf_password)){
+                        Toast.makeText(context, "BERHASIL",Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(context, "GAGAL",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+        return view;
     }
 }

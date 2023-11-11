@@ -17,26 +17,29 @@
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:hint="Username or Email"
+            android:hint="Username"
             android:layout_marginHorizontal="30dp"
             android:textSize="16sp"
             android:paddingHorizontal="10dp"
             android:drawableStart="@drawable/vector_name"
             android:drawablePadding="20dp"
-            android:background="@drawable/username_edittext"/>
+            android:background="@drawable/username_edittext"
+            android:id="@+id/username"/>
 
         <EditText
             android:maxLines="1"
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:hint="Username or Email"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:layout_marginHorizontal="30dp"
             android:textSize="16sp"
             android:paddingHorizontal="10dp"
             android:drawableStart="@drawable/email_vector"
             android:drawablePadding="15dp"
-            android:background="@drawable/username_edittext"/>
+            android:background="@drawable/username_edittext"
+            android:id="@+id/email"/>
 
         <EditText
             android:maxLines="1"
@@ -50,7 +53,8 @@
             android:layout_marginHorizontal="30dp"
             android:drawableStart="@drawable/password_vector"
             android:drawablePadding="20dp"
-            android:background="@drawable/username_edittext"/>
+            android:background="@drawable/username_edittext"
+            android:id="@+id/password"/>
 
         <EditText
             android:maxLines="1"
@@ -64,7 +68,8 @@
             android:layout_marginHorizontal="30dp"
             android:drawableStart="@drawable/password_vector"
             android:drawablePadding="20dp"
-            android:background="@drawable/username_edittext"/>
+            android:background="@drawable/username_edittext"
+            android:id="@+id/password_confirm"/>
 
         <Button
             android:layout_marginTop="25dp"
@@ -72,7 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/tombol_signup"
-            android:contentDescription="Login"
+            android:contentDescription="Sign Up"
+            android:id="@+id/sign_up"
             />
 
 
