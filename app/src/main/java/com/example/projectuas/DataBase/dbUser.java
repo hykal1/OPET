@@ -12,6 +12,7 @@ import com.example.projectuas.login.SignIn;
 import com.example.projectuas.object.User;
 
 import java.util.ArrayList;
+import java.util.concurrent.RecursiveTask;
 
 public class dbUser extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "db_opet";
@@ -100,6 +101,33 @@ public class dbUser extends SQLiteOpenHelper {
 //        Return 0 jika akun tidak ditemukan
      return 0;
 
+    }
+
+    @SuppressLint("Range")
+    public int loginAuthentication(String username, String password){
+        String selectQuery = "SELECT * FROM "+ TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if(c.moveToFirst()){
+            do{
+                String temp_username = c.getString(c.getColumnIndex(KEY_NAME));
+                String temp_email = c.getString(c.getColumnIndex(KEY_EMAIL));
+                String temp_password = c.getString(c.getColumnIndex(KEY_PASSWORD));
+                if(username.equals(temp_username)){
+                    if(password.equals(temp_password)){
+//                        Return 1 jika akun ditemukan dan sesuai (BERHASIL LOGIN)
+                        return 1;
+                    }else{
+//                        Return 2 jika akun ditemukan tetapi password salah
+                        return 2;
+                    }
+//
+                }
+            }while(c.moveToNext());
+        }
+//        Return 0 jika akun tidak ditemukan
+        return 0;
     }
 
 

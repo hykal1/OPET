@@ -1,6 +1,7 @@
 package com.example.projectuas.login;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.projectuas.DataBase.dbUser;
+import com.example.projectuas.MainActivity;
 import com.example.projectuas.R;
 
 /**
@@ -63,6 +66,7 @@ public class fragment_login extends Fragment {
 
     private EditText userName, password;
     private Button login;
+    dbUser dbUser;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,6 +75,7 @@ public class fragment_login extends Fragment {
         userName = view.findViewById(R.id.username);
         password = view.findViewById(R.id.password);
         login = view.findViewById(R.id.login_btn);
+        dbUser = new dbUser(getContext());
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,10 +93,19 @@ public class fragment_login extends Fragment {
                     password.setError("Password Harus Diisi!");
                 }
 
-                Context context = getActivity();
 //                Jika Tidak kosong maka lakukan autentikasi
                 if(isEmpty == false){
-                    Toast.makeText(context, "Execute Proses Autentikasi", Toast.LENGTH_SHORT).show();
+
+                    int check = dbUser.loginAuthentication(user_name, user_password);
+                    if(check==1){
+                        Toast.makeText(getContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+                    }else if (check==2){
+                        password.setError("Password Salah!");
+                    }else if(check==0){
+                        Toast.makeText(getContext(), "Akun tidak ditemukan!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
