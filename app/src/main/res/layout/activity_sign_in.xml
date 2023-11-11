@@ -50,12 +50,16 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/login"
                     android:text="Login"
                     android:layout_weight="50"
                     android:background="@drawable/login_button"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:id="@+id/signup"
                     android:text="Sign Up"
                     android:layout_weight="50"
                     android:background="@drawable/signup_button"/>
