@@ -100,6 +100,7 @@ public class fragment_login extends Fragment {
                     if(check==1){
                         Toast.makeText(getContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getActivity(), MainActivity.class);
+                        intent.putExtra(MainActivity.USERNAME, user_name);
                         startActivity(intent);
                     }else if (check==2){
                         password.setError("Password Salah!");

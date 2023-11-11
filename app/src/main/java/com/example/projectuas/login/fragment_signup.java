@@ -125,6 +125,7 @@ public class fragment_signup extends Fragment {
                             password.setText("");
                             confirm_password.setText("");
                             Intent intent = new Intent(getActivity(), MainActivity.class);
+                            intent.putExtra(MainActivity.USERNAME, user_name);
                             startActivity(intent);
 
 //                            Username Sudah digunakan
