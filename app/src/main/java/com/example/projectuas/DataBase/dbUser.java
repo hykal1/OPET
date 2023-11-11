@@ -73,7 +73,7 @@ public class dbUser extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public int checkAccount(String username, String password){
+    public int checkAccount(String username, String password, String email){
         String selectQuery = "SELECT * FROM "+ TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
@@ -81,15 +81,19 @@ public class dbUser extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             do{
                 String temp_username = c.getString(c.getColumnIndex(KEY_NAME));
+                String temp_email = c.getString(c.getColumnIndex(KEY_EMAIL));
                 String temp_password = c.getString(c.getColumnIndex(KEY_PASSWORD));
                 if(username.equals(temp_username)){
                     if(password.equals(temp_password)){
-//                        Return 1 jika akun ditemukan dan sesuai
+//                        Return 1 jika akun ditemukan dan sesuai (BERHASIL LOGIN)
                         return 1;
                     }else{
 //                        Return 2 jika akun ditemukan tetapi password salah
                         return 2;
                     }
+//                    Email sudah digunakan
+                } else if (email.equals(temp_email)) {
+                    return 3;
                 }
             }while(c.moveToNext());
         }

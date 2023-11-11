@@ -112,7 +112,7 @@ public class fragment_signup extends Fragment {
 //                Jika password == confirm password maka buat akun
                 if(isEmpty == false){
                     if(user_password.equals(user_conf_password)){
-                        int check = dbUser.checkAccount(user_name, user_password);
+                        int check = dbUser.checkAccount(user_name, user_password, user_email);
                         if(check == 0){
                             dbUser.addUserDetail(user_name, user_email, user_password);
                             Toast.makeText(getContext(), "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show();
@@ -120,13 +120,18 @@ public class fragment_signup extends Fragment {
                             email.setText("");
                             password.setText("");
                             confirm_password.setText("");
-                        }else{
-                            Toast.makeText(getContext(), "Username sudah digunakan", Toast.LENGTH_SHORT).show();
+
+//                            Username Sudah digunakan
+                        }else if(check==1){
+                            userName.setError("Username sudah digunakan");
+
+//                            Email sudah digunakan
+                        }else if(check==3){
+                            email.setError("Email sudah digunakan");
                         }
 
-                        Toast.makeText(getContext(), "BERHASIL",Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(getContext(), "GAGAL",Toast.LENGTH_SHORT).show();
+                        confirm_password.setError("PASSWORD TIDAK SESUAI");
                     }
                 }
             }
