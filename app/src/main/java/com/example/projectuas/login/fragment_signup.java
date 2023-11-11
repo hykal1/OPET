@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.projectuas.DataBase.dbUser;
 import com.example.projectuas.R;
 
 /**
@@ -61,8 +62,10 @@ public class fragment_signup extends Fragment {
         }
     }
 
+    dbUser dbUser;
     private EditText userName, email, password, confirm_password;
     private Button signUp;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,6 +76,7 @@ public class fragment_signup extends Fragment {
         password = view.findViewById(R.id.password);
         confirm_password = view.findViewById(R.id.password_confirm);
         signUp = view.findViewById(R.id.sign_up);
+        dbUser = new dbUser(requireContext());
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,13 +108,25 @@ public class fragment_signup extends Fragment {
                     isEmpty = true;
                 }
 
-                Context context = getActivity();
+
 //                Jika password == confirm password maka buat akun
                 if(isEmpty == false){
                     if(user_password.equals(user_conf_password)){
-                        Toast.makeText(context, "BERHASIL",Toast.LENGTH_SHORT).show();
+                        int check = dbUser.checkAccount(user_name, user_password);
+                        if(check == 0){
+                            dbUser.addUserDetail(user_name, user_email, user_password);
+                            Toast.makeText(getContext(), "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show();
+                            userName.setText("");
+                            email.setText("");
+                            password.setText("");
+                            confirm_password.setText("");
+                        }else{
+                            Toast.makeText(getContext(), "Username sudah digunakan", Toast.LENGTH_SHORT).show();
+                        }
+
+                        Toast.makeText(getContext(), "BERHASIL",Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(context, "GAGAL",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "GAGAL",Toast.LENGTH_SHORT).show();
                     }
                 }
             }

@@ -1,6 +1,16 @@
 package com.example.projectuas.object;
 
 public class User {
+    int Id;
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
     String username;
     String email;
     String password;
