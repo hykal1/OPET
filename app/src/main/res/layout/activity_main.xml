@@ -428,7 +428,446 @@
             android:elevation="5dp"
             android:background="@drawable/bg_menu_varian">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animal Food"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/see_more"
+                />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:elevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/whiskas"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        android:layout_marginLeft="16dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/whiskas"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        android:layout_marginLeft="16dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/whiskas"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        android:layout_marginLeft="16dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/whiskas"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="24dp"
+            android:layout_width="340dp"
+            android:layout_height="301dp"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:elevation="5dp"
+            android:background="@drawable/bg_menu_varian">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animal Toys"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/see_more"
+                />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:elevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cat_toys"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        android:layout_marginLeft="16dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cat_toys"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        android:layout_marginLeft="16dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cat_toys"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="145dp"
+                        android:layout_height="218dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="5dp"
+                        android:layout_marginLeft="16dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cat_toys"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WHISKAS DRY JUNIOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ocean fish flavour"
+                            android:textSize="10sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Tokopedia"
+                            android:textSize="10sp"
+                            android:layout_marginTop="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link Shopee"
+                            android:textSize="10sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
 
         </RelativeLayout>
 
