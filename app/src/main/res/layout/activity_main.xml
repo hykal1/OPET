@@ -134,7 +134,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Grooming"
+                android:text="Veterinary"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -151,12 +151,12 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="45dp">
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="76dp"
+                    android:layout_height="98dp"
                     android:src="@drawable/dokter1"
                     tools:ignore="MissingConstraints" />
 
@@ -168,12 +168,13 @@
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.189"
+                    app:layout_constraintHorizontal_bias="0.179"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Spesialis mulut hewan"
@@ -185,9 +186,249 @@
                     app:layout_constraintTop_toBottomOf="@+id/drhFakhri"
                     tools:ignore="MissingConstraints" />
 
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:drawableStart="@drawable/icon_bag"
+                    android:drawablePadding="5dp"
+                    android:text="6 tahun"
+                    android:textSize="8sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.110"
+                    tools:ignore="MissingConstraints"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    tools:layout_editor_absoluteY="33dp" />
 
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:drawableStart="@drawable/icon_like"
+                    android:drawablePadding="5dp"
+                    android:text="5 tahun"
+                    android:textSize="8sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.55"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="33dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp60000"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.129"
+                    tools:layout_editor_absoluteY="70dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_discount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.359"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="70dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp80000"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.120"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="85dp" />
+
+                <View
+                    android:layout_width="31dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.120"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="90dp" />
+
+                <Button
+                    android:layout_width="55dp"
+                    android:layout_height="27dp"
+                    android:drawableStart="@drawable/icon_whatsapp"
+                    android:drawablePadding="3dp"
+                    android:text="Chat"
+                    android:background="@drawable/bg_button_chat"
+                    android:padding="8dp"
+                    android:textSize="8sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    tools:ignore="MissingConstraints" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="76dp"
+                    android:layout_height="98dp"
+                    android:src="@drawable/dokter1"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/drhFakhri1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drh. Fakhri Ichsan"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.179"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spesialis mulut hewan"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.162"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    app:layout_constraintTop_toBottomOf="@+id/drhFakhri1"
+                    tools:ignore="MissingConstraints" />
+
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:drawableStart="@drawable/icon_bag"
+                    android:drawablePadding="5dp"
+                    android:text="6 tahun"
+                    android:textSize="8sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.110"
+                    tools:ignore="MissingConstraints"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:layout_editor_absoluteY="33dp" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:drawableStart="@drawable/icon_like"
+                    android:drawablePadding="5dp"
+                    android:text="5 tahun"
+                    android:textSize="8sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.55"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="33dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp60000"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.129"
+                    tools:layout_editor_absoluteY="70dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_discount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.359"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="70dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp80000"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.120"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="85dp" />
+
+                <View
+                    android:layout_width="31dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.120"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="90dp" />
+
+                <Button
+                    android:layout_width="55dp"
+                    android:layout_height="27dp"
+                    android:drawableStart="@drawable/icon_whatsapp"
+                    android:drawablePadding="3dp"
+                    android:text="Chat"
+                    android:background="@drawable/bg_button_chat"
+                    android:padding="8dp"
+                    android:textSize="8sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageView1"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="24dp"
+            android:layout_width="340dp"
+            android:layout_height="301dp"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:elevation="5dp"
+            android:background="@drawable/bg_menu_varian">
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="24dp"
+            android:layout_width="340dp"
+            android:layout_height="301dp"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:elevation="5dp"
+            android:background="@drawable/bg_menu_varian">
+
+
 
         </RelativeLayout>
 
