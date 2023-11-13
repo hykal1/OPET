@@ -1,6 +1,9 @@
 package com.example.projectuas.feature.Veterinary;
 
-public class Veterinary {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Veterinary implements Parcelable {
 
     private String name_vet;
     private String desc_vet;
@@ -56,4 +59,52 @@ public class Veterinary {
     public void setDetail_vet(String detail_vet) {
         this.detail_vet = detail_vet;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name_vet);
+        dest.writeString(this.desc_vet);
+        dest.writeString(this.price_vet);
+        dest.writeInt(this.photo);
+        dest.writeInt(this.photo_land);
+        dest.writeString(this.detail_vet);
+    }
+
+    public void readFromParcel(Parcel source) {
+        this.name_vet = source.readString();
+        this.desc_vet = source.readString();
+        this.price_vet = source.readString();
+        this.photo = source.readInt();
+        this.photo_land = source.readInt();
+        this.detail_vet = source.readString();
+    }
+
+    public Veterinary() {
+    }
+
+    protected Veterinary(Parcel in) {
+        this.name_vet = in.readString();
+        this.desc_vet = in.readString();
+        this.price_vet = in.readString();
+        this.photo = in.readInt();
+        this.photo_land = in.readInt();
+        this.detail_vet = in.readString();
+    }
+
+    public static final Parcelable.Creator<Veterinary> CREATOR = new Parcelable.Creator<Veterinary>() {
+        @Override
+        public Veterinary createFromParcel(Parcel source) {
+            return new Veterinary(source);
+        }
+
+        @Override
+        public Veterinary[] newArray(int size) {
+            return new Veterinary[size];
+        }
+    };
 }

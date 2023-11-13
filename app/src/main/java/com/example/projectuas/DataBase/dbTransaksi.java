@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.projectuas.feature.Grooming.GroomingData;
 import com.example.projectuas.object.Layanan;
 import com.example.projectuas.object.ListLayanan;
 
@@ -52,7 +53,7 @@ public class dbTransaksi extends SQLiteOpenHelper {
             }while(c.moveToNext());
         }
 
-        String[] list_layanan = ListLayanan.layanan;
+        String[] list_layanan = GroomingData.GroomNames;
 
         if(listLayanan.size() == list_layanan.length){
             return;

@@ -96,7 +96,6 @@ public class fragment_login extends Fragment {
 
 //                Jika Tidak kosong maka lakukan autentikasi
                 if(isEmpty == false){
-
                     int check = dbUser.loginAuthentication(user_name, user_password);
                     if(check==1){
                         Toast.makeText(getContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();

@@ -1,5 +1,7 @@
 package com.example.projectuas.feature.Veterinary;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.projectuas.MainActivity;
 import com.example.projectuas.R;
 
 import java.util.ArrayList;
@@ -21,6 +24,12 @@ public class VeterinaryAdapter extends RecyclerView.Adapter<VeterinaryAdapter.Ca
     private ArrayList<Veterinary> listVeterinary;
     public VeterinaryAdapter(ArrayList<Veterinary> list) {
         this.listVeterinary = list;
+    }
+
+    public OnItemClickCallBack onItemClickCallBack;
+
+    public void setOnItemClickCallBack(OnItemClickCallBack onItemClickCallBack) {
+        this.onItemClickCallBack = onItemClickCallBack;
     }
 
     @NonNull
@@ -38,6 +47,13 @@ public class VeterinaryAdapter extends RecyclerView.Adapter<VeterinaryAdapter.Ca
         holder.tvName.setText(veterinary.getName_vet());
         holder.tvDesc.setText(veterinary.getDesc_vet());
         holder.tvPrice.setText(veterinary.getPrice_vet());
+        holder.btnConsult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Veterinary clicked = listVeterinary.get(holder.getAdapterPosition());
+                onItemClickCallBack.onItemClicked(clicked);
+            }
+        });
 
     }
 
@@ -60,5 +76,9 @@ public class VeterinaryAdapter extends RecyclerView.Adapter<VeterinaryAdapter.Ca
             tvPrice = itemView.findViewById(R.id.tv_vet_price);
             btnConsult = itemView.findViewById(R.id.btn_consult);
         }
+    }
+
+    public interface OnItemClickCallBack{
+        void onItemClicked(Veterinary clicked);
     }
 }

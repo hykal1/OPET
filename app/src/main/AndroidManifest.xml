@@ -16,6 +16,9 @@
             android:name=".feature.Grooming.GroomingBookingActivity"
             android:exported="false" />
         <activity
+            android:name=".sales_report"
+            android:exported="false"/>
+        <activity
             android:name=".feature.Veterinary.VeterinaryBookingConsultActivity"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:name=".feature.Grooming.GroomingActivity"
             android:exported="false" />
         <activity
-            android:name=".teguhP"
+            android:name=".MainAdmin"
             android:exported="false" />
         <activity
             android:name=".login.SignIn"

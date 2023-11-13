@@ -58,7 +58,7 @@
             <ImageButton
                 android:contentDescription="Sales Report"
                 android:layout_marginTop="48dp"
-                android:id="@+id/button_veterinary_menu"
+                android:id="@+id/sales_report_menu"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:background="@drawable/sales_report"
@@ -68,7 +68,7 @@
                 android:contentDescription="Incoming order"
                 android:layout_marginTop="48dp"
                 android:layout_marginLeft="170dp"
-                android:id="@+id/button_grooming_menu"
+                android:id="@+id/incoming_order_menu"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:background="@drawable/incoming_order"

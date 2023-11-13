@@ -44,6 +44,14 @@ public class VeterinaryActivity extends AppCompatActivity implements View.OnClic
         rvVeterinary.setLayoutManager(new LinearLayoutManager(this));
         VeterinaryAdapter VeterinaryAdapter = new VeterinaryAdapter(list);
         rvVeterinary.setAdapter(VeterinaryAdapter);
+        VeterinaryAdapter.setOnItemClickCallBack(new VeterinaryAdapter.OnItemClickCallBack(){
+            @Override
+            public void onItemClicked(Veterinary clicked) {
+                Intent consult  = new Intent(VeterinaryActivity.this, VeterinaryBookingConsultActivity.class);
+                consult.putExtra(VeterinaryBookingConsultActivity.EXTRA_VETERINARY, clicked);
+                startActivity(consult);
+            }
+        });
     }
 
     @Override
