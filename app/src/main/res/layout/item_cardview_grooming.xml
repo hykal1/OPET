@@ -88,15 +88,14 @@
 
         <Button
             android:id="@+id/btn_book"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="30dp"
             android:layout_below="@id/tv_category"
-            android:layout_marginStart="148dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/tv_item_price"
             android:background="@drawable/bg_button_chat"
             android:text="Book"
-            android:textSize="10sp" />
+            android:textSize="10sp"
+            android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
 

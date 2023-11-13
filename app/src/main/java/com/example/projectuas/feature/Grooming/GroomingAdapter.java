@@ -40,7 +40,7 @@ public class GroomingAdapter extends RecyclerView.Adapter<GroomingAdapter.CardVi
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listGrooming.size();
     }
 
     public class CardViewViewHolder extends RecyclerView.ViewHolder {

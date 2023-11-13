@@ -8,4 +8,5 @@
     <color name="light_gray">#DADADA</color>
     <color name="cream">#FEEBDC</color>
     <color name="light_cream">#FFFBF3</color>
+    <color name="bg_cream">#FEFAF2</color>
 </resources>
