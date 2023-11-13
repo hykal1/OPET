@@ -2,8 +2,11 @@ package com.example.projectuas.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -12,12 +15,16 @@ import com.example.projectuas.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class sales_report extends AppCompatActivity {
+public class sales_report extends AppCompatActivity implements View.OnClickListener {
+
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales_report);
+        back = findViewById(R.id.arrowBackButton_report);
+        back.setOnClickListener(this);
 
         Spinner month = (Spinner) findViewById(R.id.month);
         Spinner year = (Spinner) findViewById(R.id.year);
@@ -41,5 +48,13 @@ public class sales_report extends AppCompatActivity {
         // Terapkan adapter ke spinner
         year.setAdapter(year_adapter);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.arrowBackButton_report){
+            Intent main_admin = new Intent(sales_report.this, MainAdmin.class);
+            startActivity(main_admin);
+        }
     }
 }
