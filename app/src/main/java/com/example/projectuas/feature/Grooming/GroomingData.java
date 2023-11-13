@@ -3,7 +3,7 @@ package com.example.projectuas.feature.Grooming;
 import java.util.ArrayList;
 
 public class GroomingData {
-    private static String[] GroomNames = {
+    public static String[] GroomNames = {
             "Dry Grooming",
             "Basic Grooming",
             "Basic Grooming + Treatment",
