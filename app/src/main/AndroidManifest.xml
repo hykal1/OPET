@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ProjectUAS"
         tools:targetApi="31">
         <activity
-            android:name=".sales_report"
+            android:name=".admin.sales_report"
             android:exported="false" />
         <activity
             android:name=".feature.Veterinary.VeterinaryActivity"
@@ -22,7 +22,7 @@
             android:name=".feature.Grooming.GroomingActivity"
             android:exported="false" />
         <activity
-            android:name=".MainAdmin"
+            android:name=".admin.MainAdmin"
             android:exported="false" />
         <activity
             android:name=".login.SignIn"

@@ -1,12 +1,9 @@
 package com.example.projectuas.login;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.projectuas.DataBase.dbUser;
 import com.example.projectuas.MainActivity;
-import com.example.projectuas.MainAdmin;
+import com.example.projectuas.admin.MainAdmin;
 import com.example.projectuas.R;
 
 /**

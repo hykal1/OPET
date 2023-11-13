@@ -1,4 +1,4 @@
-package com.example.projectuas;
+package com.example.projectuas.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.projectuas.R;
 
 public class MainAdmin extends AppCompatActivity implements View.OnClickListener{
 
