@@ -23,11 +23,13 @@ public class VeterinaryActivity extends AppCompatActivity implements View.OnClic
     private RecyclerView rvVeterinary;
     private ArrayList<Veterinary> list = new ArrayList<>();
     private ImageButton btnBack;
+    public static String EXTRA_NAME = "name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_veterinary);
+        String username = getIntent().getStringExtra(EXTRA_NAME);
 
         btnBack = findViewById(R.id.arrowBackButton_vet);
         btnBack.setOnClickListener(this);
@@ -48,7 +50,9 @@ public class VeterinaryActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onItemClicked(Veterinary clicked) {
                 Intent consult  = new Intent(VeterinaryActivity.this, VeterinaryBookingConsultActivity.class);
+                String username = getIntent().getStringExtra(EXTRA_NAME);
                 consult.putExtra(VeterinaryBookingConsultActivity.EXTRA_VETERINARY, clicked);
+                consult.putExtra(VeterinaryBookingConsultActivity.EXTRA_NAME, username);
                 startActivity(consult);
             }
         });
@@ -58,6 +62,8 @@ public class VeterinaryActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         if (v.getId() == R.id.arrowBackButton_vet) {
             Intent back = new Intent(VeterinaryActivity.this, MainActivity.class);
+            String username = getIntent().getStringExtra(EXTRA_NAME);
+            back.putExtra(MainActivity.EXTRA_USERNAME, username);
             startActivity(back);
         }
     }

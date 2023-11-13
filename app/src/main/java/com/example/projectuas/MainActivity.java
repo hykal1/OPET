@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         String username = getIntent().getStringExtra(EXTRA_USERNAME);
+
         tv_username = findViewById(R.id.username);
         tv_username.setText("Hello, "+username);
         img_veterinary = findViewById(R.id.button_veterinary_menu);
@@ -43,9 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.getId() == R.id.button_veterinary_menu) {
             Intent veterinary = new Intent(MainActivity.this, VeterinaryActivity.class);
+            String username = getIntent().getStringExtra(EXTRA_USERNAME);
+            veterinary.putExtra(VeterinaryActivity.EXTRA_NAME, username);
             startActivity(veterinary);
         } else if (v.getId()==R.id.button_grooming_menu) {
             Intent grooming = new Intent(MainActivity.this, GroomingActivity.class);
+            String username = getIntent().getStringExtra(EXTRA_USERNAME);
+            grooming.putExtra(GroomingActivity.EXTRA_NAME, username);
             startActivity(grooming);
         }
     }

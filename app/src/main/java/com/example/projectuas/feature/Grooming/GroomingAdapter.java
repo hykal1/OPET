@@ -17,6 +17,12 @@ import java.util.ArrayList;
 public class GroomingAdapter extends RecyclerView.Adapter<GroomingAdapter.CardViewViewHolder> {
 
     private ArrayList<Grooming> listGrooming;
+    public OnItemCLickCallBack onItemCLickListener;
+
+    public void setOnItemCLickListener(OnItemCLickCallBack onItemCLickCallBack) {
+        this.onItemCLickListener = onItemCLickCallBack;
+    }
+
     public GroomingAdapter(ArrayList<Grooming> list) {
         this.listGrooming = list;
     }
@@ -35,6 +41,13 @@ public class GroomingAdapter extends RecyclerView.Adapter<GroomingAdapter.CardVi
         holder.tvName.setText(grooming.getName_groom());
         holder.tvDesc.setText(grooming.getDesc_groom());
         holder.tvPrice.setText(grooming.getPrice_groom());
+        holder.btnBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Grooming clicked = listGrooming.get(holder.getAdapterPosition());
+                onItemCLickListener.onItemClicked(clicked);
+            }
+        });
 
     }
 
@@ -55,5 +68,9 @@ public class GroomingAdapter extends RecyclerView.Adapter<GroomingAdapter.CardVi
             tvPrice = itemView.findViewById(R.id.tv_item_price);
             btnBook = itemView.findViewById(R.id.btn_book);
         }
+    }
+
+    public interface OnItemCLickCallBack{
+        public void onItemClicked(Grooming clicked);
     }
 }

@@ -20,12 +20,14 @@ public class GroomingActivity extends AppCompatActivity implements View.OnClickL
 
     private RecyclerView rvGrooming;
     private ArrayList<Grooming> list = new ArrayList<>();
+    public static String EXTRA_NAME = "NAME";
     private ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grooming);
+        String username = getIntent().getStringExtra(EXTRA_NAME);
 
         btnBack = findViewById(R.id.arrowBackButton_gro);
         btnBack.setOnClickListener(this);
@@ -41,12 +43,24 @@ public class GroomingActivity extends AppCompatActivity implements View.OnClickL
         rvGrooming.setLayoutManager(new LinearLayoutManager(this));
         GroomingAdapter GroomingAdapter = new GroomingAdapter(list);
         rvGrooming.setAdapter(GroomingAdapter);
+        GroomingAdapter.setOnItemCLickListener(new GroomingAdapter.OnItemCLickCallBack() {
+            @Override
+            public void onItemClicked(Grooming clicked) {
+                Intent click = new Intent(GroomingActivity.this, GroomingBookingActivity.class);
+                String username = getIntent().getStringExtra(EXTRA_NAME);
+                click.putExtra(GroomingBookingActivity.EXTRA_GROOMING, clicked);
+                click.putExtra(GroomingBookingActivity.EXTRA_NAME, username);
+                startActivity(click);
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.arrowBackButton_gro) {
             Intent back = new Intent(GroomingActivity.this, MainActivity.class);
+            String username = getIntent().getStringExtra(EXTRA_NAME);
+            back.putExtra(MainActivity.EXTRA_USERNAME, username);
             startActivity(back);
         }
     }
