@@ -8,7 +8,8 @@ import android.os.Handler;
 
 import com.example.projectuas.MainActivity;
 import com.example.projectuas.R;
-import com.example.projectuas.login.login;
+import com.example.projectuas.login.SignIn;
+
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 // Intent untuk pindah ke activity selanjutnya
-                Intent intent = new Intent(SplashScreen.this, login.class);
+                Intent intent = new Intent(SplashScreen.this, SignIn.class);
                 startActivity(intent);
 
                 // Tutup activity splash screen

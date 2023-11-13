@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FEEBDC"
-    tools:context=".login.login2">
+    android:background="@color/orange"
+    tools:context=".login.SignIn">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,57 +17,10 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="59dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/kucheng"/>
+            android:src="@drawable/kucheng_2"/>
 
-        <TextView
-            android:id="@+id/opet"
-            android:layout_width="wrap_content"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="228dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="212dp"
-            android:text="OPET"
-            android:gravity="top"
-            />
 
     </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-        <TextView
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Let's "/>
-        <TextView
-            android:textColor="@color/orange"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Get "/>
-
-        <TextView
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Started"/>
-    </LinearLayout>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:text="Create An Account"
-        android:textAlignment="center"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -75,67 +28,69 @@
 
         <ImageView
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="50dp"
             android:layout_width="430dp"
             android:layout_height="500dp"
-            android:src="@drawable/circleorange"/>
+            android:src="@drawable/circlerevamp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <EditText
-                android:maxLines="1"
-                android:drawableStart="@drawable/email_vector"
-                android:layout_marginTop="115dp"
-                android:paddingStart="15dp"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:paddingBottom="5dp"
-                android:textColorHint="@color/gray"
-                android:paddingEnd="15dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="280dp"
-                android:background="@drawable/rectangle3"
-                android:drawablePadding="15dp"
-                android:layout_height="60dp"/>
 
-            <EditText
-                android:maxLines="1"
-                android:drawableStart="@drawable/password_vector"
-                android:layout_marginTop="15dp"
-                android:paddingStart="15dp"
-                android:hint="Password"
-                android:paddingEnd="15dp"
-                android:paddingBottom="5dp"
-                android:textColorHint="@color/gray"
-                android:inputType="textPassword"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="280dp"
-                android:background="@drawable/rectangle3"
-                android:drawablePadding="15dp"
-                android:layout_height="60dp"/>
+
+
+        <FrameLayout
+            android:layout_width="320dp"
+            android:layout_height="392dp"
+            android:layout_gravity="center"
+            android:background="@drawable/frame_login_signup"
+            android:elevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/login"
+                    android:text="Login"
+                    android:layout_weight="50"
+                    android:background="@drawable/login_button"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:id="@+id/signup"
+                    android:text="Sign Up"
+                    android:layout_weight="50"
+                    android:background="@drawable/signup_button"/>
+
+            </LinearLayout>
+
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:layout_width="226dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/bg_button"
-                    android:text="SIGN IN"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    />
+                android:layout_height="342dp"
+                android:layout_marginTop="50dp"
+                android:id="@+id/frame_login_signup">
 
             </FrameLayout>
 
-        </LinearLayout>
+
+
+
+
+
+
+        </FrameLayout>
+
+
+
+        
+        
 
     </FrameLayout>
+
+
+
 
 </LinearLayout>
