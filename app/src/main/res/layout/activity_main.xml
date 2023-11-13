@@ -87,6 +87,7 @@
                 />
 
             <ImageButton
+                android:contentDescription="Veterinary"
                 android:layout_marginTop="48dp"
                 android:id="@+id/button_veterinary_menu"
                 android:layout_width="140dp"
@@ -95,6 +96,7 @@
                 />
 
             <ImageButton
+                android:contentDescription="See More"
                 android:layout_marginTop="48dp"
                 android:layout_marginLeft="170dp"
                 android:id="@+id/button_grooming_menu"
@@ -104,6 +106,7 @@
                 />
 
             <ImageButton
+                android:contentDescription="Food"
                 android:layout_marginTop="220dp"
                 android:id="@+id/button_food_menu"
                 android:layout_width="140dp"
@@ -112,6 +115,7 @@
                 />
 
             <ImageButton
+                android:contentDescription="Accessories"
                 android:layout_marginTop="220dp"
                 android:layout_marginLeft="170dp"
                 android:id="@+id/button_food_accessories"
@@ -142,6 +146,7 @@
                 />
 
             <ImageButton
+                android:contentDescription="See More"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

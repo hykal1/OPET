@@ -127,9 +127,11 @@ public class fragment_signup extends Fragment {
                             confirm_password.setText("");
                             if(user_name.equals("admin") && user_password.equals("admin")){
                                 Intent intent = new Intent(getActivity(), MainAdmin.class);
+                                intent.putExtra(MainAdmin.EXTRA_USERNAME, user_name);
                                 startActivity(intent);
                             }else{
                                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                                intent.putExtra(MainActivity.EXTRA_USERNAME, user_name);
                                 startActivity(intent);
 
                             }
