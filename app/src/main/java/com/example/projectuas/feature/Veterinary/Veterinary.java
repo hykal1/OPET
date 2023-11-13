@@ -6,6 +6,8 @@ public class Veterinary {
     private String desc_vet;
     private String price_vet;
     private int photo;
+    private int photo_land;
+    private String detail_vet;
 
     public String getName_vet() {
         return name_vet;
@@ -37,5 +39,21 @@ public class Veterinary {
 
     public void setPhoto(int photo) {
         this.photo = photo;
+    }
+
+    public int getPhoto_land() {
+        return photo_land;
+    }
+
+    public void setPhoto_land(int photo_land) {
+        this.photo_land = photo_land;
+    }
+
+    public String getDetail_vet() {
+        return detail_vet;
+    }
+
+    public void setDetail_vet(String detail_vet) {
+        this.detail_vet = detail_vet;
     }
 }
