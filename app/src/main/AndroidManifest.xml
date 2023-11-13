@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ProjectUAS"
         tools:targetApi="31">
         <activity
+            android:name=".MainAdmin"
+            android:exported="false" />
+        <activity
             android:name=".teguhP"
             android:exported="false" />
         <activity
