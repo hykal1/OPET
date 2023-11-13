@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gro_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="4dp"
+    card_view:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp">
+
+        <ImageView
+            android:id="@+id/img_item_photo"
+            android:layout_width="72dp"
+            android:layout_height="94dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_groom"/>
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="@string/groom_name"/>
+
+        <TextView
+            android:id="@+id/tv_item_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_name"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo"
+            android:ellipsize="end"
+            android:textSize="10sp"
+            tools:text="@string/desc" />
+
+        <LinearLayout
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_below="@id/tv_item_detail"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:layout_width="36dp"
+                android:layout_height="15dp"
+                android:text="Kucing"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:background="@drawable/shape_category"/>
+            <TextView
+                android:layout_width="36dp"
+                android:layout_height="15dp"
+                android:text="Anjing"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/shape_category"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo"
+            android:layout_below="@id/tv_category"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="@string/groom_price"/>
+
+        <Button
+            android:id="@+id/btn_book"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@id/tv_category"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/tv_item_price"
+            android:background="@drawable/bg_button_chat"
+            android:text="Book"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

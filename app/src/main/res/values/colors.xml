@@ -5,6 +5,7 @@
     <color name="orange">#FFAC58</color>
     <color name="light_orange">#FFAC58</color>
     <color name="gray">#A4A5AD</color>
+    <color name="light_gray">#DADADA</color>
     <color name="cream">#FEEBDC</color>
     <color name="light_cream">#FFFBF3</color>
 </resources>
