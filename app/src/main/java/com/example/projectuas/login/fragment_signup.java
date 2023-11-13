@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.projectuas.DataBase.dbUser;
 import com.example.projectuas.MainActivity;
+import com.example.projectuas.MainAdmin;
 import com.example.projectuas.R;
 
 /**
@@ -124,9 +125,17 @@ public class fragment_signup extends Fragment {
                             email.setText("");
                             password.setText("");
                             confirm_password.setText("");
-                            Intent intent = new Intent(getActivity(), MainActivity.class);
-                            intent.putExtra(MainActivity.USERNAME, user_name);
-                            startActivity(intent);
+                            if(user_name.equals("admin") && user_password.equals("admin")){
+                                Intent intent = new Intent(getActivity(), MainAdmin.class);
+                                intent.putExtra(MainAdmin.EXTRA_USERNAME, user_name);
+                                startActivity(intent);
+                            }else{
+                                Intent intent = new Intent(getActivity(), MainActivity.class);
+                                intent.putExtra(MainActivity.EXTRA_USERNAME, user_name);
+                                startActivity(intent);
+
+                            }
+
 
 //                            Username Sudah digunakan
                         }else if(check==1){

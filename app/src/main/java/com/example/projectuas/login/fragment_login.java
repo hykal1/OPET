@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.projectuas.DataBase.dbUser;
 import com.example.projectuas.MainActivity;
+import com.example.projectuas.MainAdmin;
 import com.example.projectuas.R;
 
 /**
@@ -95,13 +96,18 @@ public class fragment_login extends Fragment {
 
 //                Jika Tidak kosong maka lakukan autentikasi
                 if(isEmpty == false){
-
                     int check = dbUser.loginAuthentication(user_name, user_password);
                     if(check==1){
                         Toast.makeText(getContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        intent.putExtra(MainActivity.USERNAME, user_name);
-                        startActivity(intent);
+                        if(user_name.equals("admin") && user_password.equals("admin")){
+                            Intent intent = new Intent(getActivity(), MainAdmin.class);
+                            intent.putExtra(MainAdmin.EXTRA_USERNAME, user_name);
+                            startActivity(intent);
+                        }else{
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            intent.putExtra(MainActivity.EXTRA_USERNAME, user_name);
+                            startActivity(intent);
+                        }
                     }else if (check==2){
                         password.setError("Password Salah!");
                     }else if(check==0){

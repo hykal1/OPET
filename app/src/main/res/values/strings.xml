@@ -9,4 +9,10 @@
     <string name="title_vetrinary">Veterinary</string>
     <string name="title_grooming">Grooming</string>
     <string name="foods">Foods</string>
+    <string name="grooming">Grooming</string>
+    <string name="veterinary">Veterinary</string>
+    <string name="groom_name">Grooming Name</string>
+    <string name="desc">desc</string>
+    <string name="groom_price">Price</string>
+    <string name="vet_name">Drh. xx</string>
 </resources>
