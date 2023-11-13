@@ -5,6 +5,7 @@ public class Grooming {
     private String name_groom;
     private String desc_groom;
     private String price_groom;
+    private String detail_groom;
 
     public String getName_groom() {
         return name_groom;
@@ -28,5 +29,13 @@ public class Grooming {
 
     public void setPrice_groom(String price_groom) {
         this.price_groom = price_groom;
+    }
+
+    public String getDetail_groom() {
+        return detail_groom;
+    }
+
+    public void setDetail_groom(String detail_groom) {
+        this.detail_groom = detail_groom;
     }
 }

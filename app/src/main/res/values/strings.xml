@@ -15,4 +15,5 @@
     <string name="consult_detail">Detail consult</string>
     <string name="consult_price">Rp.60.000</string>
     <string name="count">1</string>
+    <string name="grooming_type">Grooming Type</string>
 </resources>
