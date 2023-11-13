@@ -118,7 +118,7 @@
                 android:contentDescription="Accessories"
                 android:layout_marginTop="220dp"
                 android:layout_marginLeft="170dp"
-                android:id="@+id/button_food_accessories"
+                android:id="@+id/button_accessories_menu"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:background="@drawable/accessories"
