@@ -112,7 +112,6 @@ public class dbUser extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             do{
                 String temp_username = c.getString(c.getColumnIndex(KEY_NAME));
-                String temp_email = c.getString(c.getColumnIndex(KEY_EMAIL));
                 String temp_password = c.getString(c.getColumnIndex(KEY_PASSWORD));
                 if(username.equals(temp_username)){
                     if(password.equals(temp_password)){
@@ -128,6 +127,18 @@ public class dbUser extends SQLiteOpenHelper {
         }
 //        Return 0 jika akun tidak ditemukan
         return 0;
+    }
+
+    @SuppressLint("Range")
+    public User getAccount(String username, String password){
+        String selectQuery = "SELECT * FROM " +TABLE_NAME+ " WHERE " +KEY_NAME + "="+username;
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+        User logging_in = new User();
+        logging_in.setUsername(c.getString(c.getColumnIndex(KEY_NAME)));
+        logging_in.setEmail(c.getString(c.getColumnIndex(KEY_EMAIL)));
+        logging_in.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
+        return logging_in;
     }
 
 

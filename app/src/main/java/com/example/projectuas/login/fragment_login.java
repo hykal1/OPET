@@ -18,6 +18,7 @@ import com.example.projectuas.MainActivity;
 import com.example.projectuas.MainAdmin;
 import com.example.projectuas.R;
 import com.example.projectuas.Session.Session;
+import com.example.projectuas.object.User;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -99,17 +100,18 @@ public class fragment_login extends Fragment {
                 if(isEmpty == false){
                     int check = dbUser.loginAuthentication(user_name, user_password);
                     if(check==1){
+                        User online = dbUser.getAccount(user_name, user_password);
                         Toast.makeText(getContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();
                         if(user_name.equals("admin") && user_password.equals("admin")){
                             Intent intent = new Intent(getActivity(), MainAdmin.class);
                             Session user = new Session(getContext());
-                            user.saveSession(user_name);
+                            user.saveSession(online.getUsername(), online.getEmail(), online.getPassword());
                             startActivity(intent);
                             getActivity().finish();
                         }else{
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             Session user = new Session(getContext());
-                            user.saveSession(user_name);
+                            user.saveSession(online.getUsername(), online.getEmail(), online.getPassword());
                             startActivity(intent);
                             getActivity().finish();
                         }

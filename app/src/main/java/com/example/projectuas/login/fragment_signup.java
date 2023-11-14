@@ -121,6 +121,8 @@ public class fragment_signup extends Fragment {
                         int check = dbUser.checkAccount(user_name, user_password, user_email);
                         if(check == 0){
                             dbUser.addUserDetail(user_name, user_email, user_password);
+                            Session user = new Session(getContext());
+                            user.saveSession(user_name, user_email, user_password);
                             Toast.makeText(getContext(), "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show();
                             userName.setText("");
                             email.setText("");
@@ -128,14 +130,10 @@ public class fragment_signup extends Fragment {
                             confirm_password.setText("");
                             if(user_name.equals("admin") && user_password.equals("admin")){
                                 Intent intent = new Intent(getActivity(), MainAdmin.class);
-                                Session user = new Session(getContext());
-                                user.saveSession(user_name);
                                 startActivity(intent);
                                 getActivity().finish();
                             }else{
                                 Intent intent = new Intent(getActivity(), MainActivity.class);
-                                Session user = new Session(getContext());
-                                user.saveSession(user_name);
                                 startActivity(intent);
                                 getActivity().finish();
                             }
