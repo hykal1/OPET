@@ -105,11 +105,13 @@ public class fragment_login extends Fragment {
                             Session user = new Session(getContext());
                             user.saveSession(user_name);
                             startActivity(intent);
+                            getActivity().finish();
                         }else{
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             Session user = new Session(getContext());
                             user.saveSession(user_name);
                             startActivity(intent);
+                            getActivity().finish();
                         }
                     }else if (check==2){
                         password.setError("Password Salah!");
