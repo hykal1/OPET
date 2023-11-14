@@ -16,4 +16,7 @@
     <string name="consult_price">Rp.60.000</string>
     <string name="count">1</string>
     <string name="grooming_type">Grooming Type</string>
+    <string name="profile">Profile</string>
+    <string name="update">Update</string>
+    <string name="logout">Logout</string>
 </resources>
