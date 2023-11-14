@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.projectuas.Session.Session;
@@ -13,9 +15,9 @@ import com.example.projectuas.feature.Veterinary.VeterinaryActivity;
 import com.example.projectuas.feature.food.FoodActivity;
 import com.example.projectuas.login.login;
 
-public class MainActivity extends AppCompatActivity {
-    public static String EXTRA_USERNAME = "USERNAME";
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     TextView tv_username;
+    ImageButton btn_veterinary, btn_grooming, btn_food, btn_accessories;
 
 
     @Override
@@ -27,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
 
         tv_username = findViewById(R.id.username);
         tv_username.setText("Hello, "+username);
+        btn_veterinary = findViewById(R.id.button_veterinary_menu);
+        btn_grooming = findViewById(R.id.button_grooming_menu);
+        btn_food = findViewById(R.id.button_food_menu);
+        btn_accessories = findViewById(R.id.button_accessories_menu);
+
+        btn_accessories.setOnClickListener(this);
+        btn_veterinary.setOnClickListener(this);
+        btn_food.setOnClickListener(this);
+        btn_grooming.setOnClickListener(this);
+
 
 
     }

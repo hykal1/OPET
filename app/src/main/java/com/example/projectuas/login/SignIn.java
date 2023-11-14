@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.projectuas.MainActivity;
-import com.example.projectuas.MainAdmin;
+import com.example.projectuas.admin.MainAdmin;
 import com.example.projectuas.R;
 import com.example.projectuas.Session.Session;
 
