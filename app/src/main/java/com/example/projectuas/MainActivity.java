@@ -13,6 +13,7 @@ import com.example.projectuas.Session.Session;
 import com.example.projectuas.feature.Grooming.GroomingActivity;
 import com.example.projectuas.feature.Veterinary.Veterinary;
 import com.example.projectuas.feature.Veterinary.VeterinaryActivity;
+import com.example.projectuas.feature.food.FoodActivity;
 import com.example.projectuas.login.login;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId()==R.id.button_grooming_menu) {
             Intent grooming = new Intent(MainActivity.this, GroomingActivity.class);
             startActivity(grooming);
+        } else if(v.getId()==R.id.button_food_menu){
+            Intent food = new Intent (MainActivity.this, FoodActivity.class);
+            startActivity(food);
         }
     }
 }

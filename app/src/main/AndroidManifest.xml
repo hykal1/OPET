@@ -19,6 +19,9 @@
             android:name=".sales_report"
             android:exported="false"/>
         <activity
+            android:name=".feature.food.FoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".feature.Veterinary.VeterinaryBookingConsultActivity"
             android:exported="false" />
         <activity

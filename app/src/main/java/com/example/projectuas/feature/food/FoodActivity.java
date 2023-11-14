@@ -18,11 +18,11 @@ public class FoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
 
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle("Animal Food");
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+//        ActionBar actionBar = getSupportActionBar();
+//        if (actionBar != null) {
+//            actionBar.setTitle("Animal Food");
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//        }
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         int numberOfColumns = 2;
