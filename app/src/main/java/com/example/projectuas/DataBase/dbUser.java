@@ -131,13 +131,17 @@ public class dbUser extends SQLiteOpenHelper {
 
     @SuppressLint("Range")
     public User getAccount(String username, String password){
-        String selectQuery = "SELECT * FROM " +TABLE_NAME+ " WHERE " +KEY_NAME + "="+username;
-        SQLiteDatabase db = getWritableDatabase();
+        String selectQuery = "SELECT * FROM User where user_name='" +username + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
         User logging_in = new User();
-        logging_in.setUsername(c.getString(c.getColumnIndex(KEY_NAME)));
-        logging_in.setEmail(c.getString(c.getColumnIndex(KEY_EMAIL)));
-        logging_in.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
+        if(c.moveToFirst()){
+            logging_in.setId((c.getInt(c.getColumnIndex(KEY_ID))));
+            logging_in.setUsername(c.getString(c.getColumnIndex(KEY_NAME)));
+            logging_in.setEmail(c.getString(c.getColumnIndex(KEY_EMAIL)));
+            logging_in.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
+        }
+        c.close();
         return logging_in;
     }
 

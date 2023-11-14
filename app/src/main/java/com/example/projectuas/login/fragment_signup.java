@@ -17,6 +17,7 @@ import com.example.projectuas.MainActivity;
 import com.example.projectuas.admin.MainAdmin;
 import com.example.projectuas.R;
 import com.example.projectuas.Session.Session;
+import com.example.projectuas.object.User;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -118,8 +119,9 @@ public class fragment_signup extends Fragment {
                         int check = dbUser.checkAccount(user_name, user_password, user_email);
                         if(check == 0){
                             dbUser.addUserDetail(user_name, user_email, user_password);
+                            User online = dbUser.getAccount(user_name, user_password);
                             Session user = new Session(getContext());
-                            user.saveSession(user_name, user_email, user_password);
+                            user.saveSession(online.getId(),user_name, user_email, user_password);
                             Toast.makeText(getContext(), "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show();
                             userName.setText("");
                             email.setText("");

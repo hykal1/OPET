@@ -104,13 +104,13 @@ public class fragment_login extends Fragment {
                         if(user_name.equals("admin") && user_password.equals("admin")){
                             Intent intent = new Intent(getActivity(), MainAdmin.class);
                             Session user = new Session(getContext());
-                            user.saveSession(online.getUsername(), online.getEmail(), online.getPassword());
+                            user.saveSession(online.getId(), online.getUsername(), online.getEmail(), online.getPassword());
                             startActivity(intent);
                             getActivity().finish();
                         }else{
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             Session user = new Session(getContext());
-                            user.saveSession(online.getUsername(), online.getEmail(), online.getPassword());
+                            user.saveSession(online.getId(), online.getUsername(), online.getEmail(), online.getPassword());
                             startActivity(intent);
                             getActivity().finish();
                         }

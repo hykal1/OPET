@@ -13,7 +13,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.projectuas.DataBase.dbTransaksi;
 import com.example.projectuas.R;
+import com.example.projectuas.Session.Session;
 
 public class VeterinaryBookingConsultActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,12 +24,14 @@ public class VeterinaryBookingConsultActivity extends AppCompatActivity implemen
     ImageButton back, plus, minus;
     Button book;
     TextView tv_consult_with, tv_consult_specialist, tv_detail, tv_price, count;
+    dbTransaksi dbTransaksi;
     public static String EXTRA_VETERINARY = "VETERINARY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_veterinary_booking_consult);
         back = findViewById(R.id.arrowBackButton_vet);
+        dbTransaksi = new dbTransaksi(this);
 
         photo = findViewById(R.id.img_photo_landscape);
         tv_consult_specialist = findViewById(R.id.tv_consult_specialist);
@@ -77,6 +81,8 @@ public class VeterinaryBookingConsultActivity extends AppCompatActivity implemen
         }
     }
     private void tampilkanDialog() {
+        Session logged_in = new Session(this);
+        Veterinary clicked = getIntent().getParcelableExtra(EXTRA_VETERINARY);
         // Membuat objek AlertDialog.Builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -90,7 +96,8 @@ public class VeterinaryBookingConsultActivity extends AppCompatActivity implemen
             public void onClick(DialogInterface dialogInterface, int i) {
                 // Aksi yang akan dilakukan saat tombol positif diklik
 //                Input data ke database
-
+                int value = Integer.valueOf(count.getText().toString());
+                dbTransaksi.addVeterinary(clicked.getId_vet(), logged_in.getId(), clicked.getName_vet(), clicked.getPrice_vet()*value);
                 dialogInterface.dismiss(); // Menutup dialog
                 successDialog();
             }
