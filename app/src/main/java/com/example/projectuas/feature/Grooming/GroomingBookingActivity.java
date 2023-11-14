@@ -12,7 +12,6 @@ import com.example.projectuas.R;
 
 public class GroomingBookingActivity extends AppCompatActivity implements View.OnClickListener{
     public static String EXTRA_GROOMING = "GROOMING";
-    public static String EXTRA_NAME = "NAME";
     TextView name, desc, price, detail;
     ImageButton back;
 
@@ -40,8 +39,6 @@ public class GroomingBookingActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
         if(v.getId()==R.id.arrowBackButton_gro){
             Intent back = new Intent(GroomingBookingActivity.this, GroomingActivity.class);
-            String username = getIntent().getStringExtra(EXTRA_NAME);
-            back.putExtra(GroomingActivity.EXTRA_NAME, username);
             startActivity(back);
         }
     }

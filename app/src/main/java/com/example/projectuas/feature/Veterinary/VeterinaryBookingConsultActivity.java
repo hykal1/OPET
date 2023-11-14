@@ -18,7 +18,6 @@ public class VeterinaryBookingConsultActivity extends AppCompatActivity implemen
     ImageButton back;
     TextView tv_consult_with, tv_consult_specialist, tv_detail, tv_price;
     public static String EXTRA_VETERINARY = "VETERINARY";
-    public static String EXTRA_NAME = "NAME";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +44,6 @@ public class VeterinaryBookingConsultActivity extends AppCompatActivity implemen
     public void onClick(View v) {
         if (v.getId() == R.id.arrowBackButton_vet) {
             Intent back = new Intent(VeterinaryBookingConsultActivity.this, VeterinaryActivity.class);
-            String username = getIntent().getStringExtra(EXTRA_NAME);
-            back.putExtra(VeterinaryActivity.EXTRA_NAME, username);
             startActivity(back);
         }
     }
