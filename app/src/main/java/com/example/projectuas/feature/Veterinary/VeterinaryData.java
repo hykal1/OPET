@@ -22,12 +22,16 @@ public class VeterinaryData {
             "Veterinary Orthopedic Specialist"
     };
 
-    private static String[] VetPrice = {
-            "Rp. 50.000",
-            "Rp. 50.000",
-            "Rp. 70.000",
-            "Rp. 70.000",
-            "Rp. 70.000"
+    private static int[] VetPrice = {
+            50000,
+            50000,
+            70000,
+            70000,
+            70000
+    };
+
+    private static int[] VetIds = {
+            1,2,3,4,5
     };
 
     private static int[] VetImages = {
@@ -62,6 +66,7 @@ public class VeterinaryData {
             veterinary.setDesc_vet(VetDesc[position]);
             veterinary.setPrice_vet(VetPrice[position]);
             veterinary.setPhoto(VetImages[position]);
+            veterinary.setId_vet(VetIds[position]);
             veterinary.setPhoto_land(VetImagesLandscape[position]);
             veterinary.setDetail_vet(VetDetail[position]);
             list.add(veterinary);

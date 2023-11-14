@@ -7,8 +7,9 @@ public class Grooming implements Parcelable {
 
     private String name_groom;
     private String desc_groom;
-    private String price_groom;
+    private int price_groom;
     private String detail_groom;
+    private int id_groom;
 
     public String getName_groom() {
         return name_groom;
@@ -26,11 +27,11 @@ public class Grooming implements Parcelable {
         this.desc_groom = desc_groom;
     }
 
-    public String getPrice_groom() {
+    public int getPrice_groom() {
         return price_groom;
     }
 
-    public void setPrice_groom(String price_groom) {
+    public void setPrice_groom(int price_groom) {
         this.price_groom = price_groom;
     }
 
@@ -51,15 +52,25 @@ public class Grooming implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name_groom);
         dest.writeString(this.desc_groom);
-        dest.writeString(this.price_groom);
+        dest.writeInt(this.price_groom);
         dest.writeString(this.detail_groom);
+        dest.writeInt(this.id_groom);
+    }
+
+    public int getId_groom() {
+        return id_groom;
+    }
+
+    public void setId_groom(int id_groom) {
+        this.id_groom = id_groom;
     }
 
     public void readFromParcel(Parcel source) {
         this.name_groom = source.readString();
         this.desc_groom = source.readString();
-        this.price_groom = source.readString();
+        this.price_groom = source.readInt();
         this.detail_groom = source.readString();
+        this.id_groom = source.readInt();
     }
 
     public Grooming() {
@@ -68,8 +79,9 @@ public class Grooming implements Parcelable {
     protected Grooming(Parcel in) {
         this.name_groom = in.readString();
         this.desc_groom = in.readString();
-        this.price_groom = in.readString();
+        this.price_groom = in.readInt();
         this.detail_groom = in.readString();
+        this.id_groom = in.readInt();
     }
 
     public static final Parcelable.Creator<Grooming> CREATOR = new Parcelable.Creator<Grooming>() {

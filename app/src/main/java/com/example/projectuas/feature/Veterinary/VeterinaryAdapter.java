@@ -46,7 +46,7 @@ public class VeterinaryAdapter extends RecyclerView.Adapter<VeterinaryAdapter.Ca
         Glide.with(holder.itemView.getContext()).load(veterinary.getPhoto()).apply(new RequestOptions().override(350, 550)).into(holder.imgPhoto);
         holder.tvName.setText(veterinary.getName_vet());
         holder.tvDesc.setText(veterinary.getDesc_vet());
-        holder.tvPrice.setText(veterinary.getPrice_vet());
+        holder.tvPrice.setText(String.valueOf("Rp. "+veterinary.getPrice_vet()));
         holder.btnConsult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

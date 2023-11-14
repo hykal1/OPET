@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.projectuas.DataBase.dbTransaksi;
 import com.example.projectuas.MainActivity;
 import com.example.projectuas.admin.MainAdmin;
 import com.example.projectuas.R;
@@ -17,10 +18,12 @@ import com.example.projectuas.Session.Session;
 public class SignIn extends AppCompatActivity implements View.OnClickListener{
 
     Button login, signup;
+    dbTransaksi dbTransaksi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        dbTransaksi = new dbTransaksi(this);
         Session user = new Session(this);
         if(user.isLoggedIn()){
             if(user.getUsername().equals("admin")){

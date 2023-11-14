@@ -17,12 +17,14 @@ public class GroomingData {
             "Shampoo and Full Treatment"
     };
 
-    private static String[] GroomPrice = {
-            "Rp. 25.000",
-            "Rp. 60.000",
-            "Rp. 100.000",
-            "Rp. 110.000"
+    private static int[] GroomPrice = {
+            25000,
+            60000,
+            100000,
+            110000
     };
+
+    private static int[] GroomId = {1,2,3,4};
 
     private static String[] GroomDetail = {
             "Dry grooming involves grooming pets without the use of water, relying on techniques like brushing, combing, and other dry cleaning methods to maintain their hygiene and appearance. This method is particularly suitable for animals that may be averse to water or for situations where traditional bathing is not practical.",
@@ -39,6 +41,7 @@ public class GroomingData {
             grooming.setDesc_groom(GroomDesc[position]);
             grooming.setPrice_groom(GroomPrice[position]);
             grooming.setDetail_groom(GroomDetail[position]);
+            grooming.setId_groom(GroomId[position]);
             list.add(grooming);
         }
         return list;

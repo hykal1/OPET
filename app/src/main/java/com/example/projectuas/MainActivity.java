@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.projectuas.DataBase.dbTransaksi;
 import com.example.projectuas.Session.Session;
 import com.example.projectuas.feature.Grooming.GroomingActivity;
 import com.example.projectuas.feature.Veterinary.Veterinary;
@@ -19,13 +20,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tv_username;
     ImageButton btn_veterinary, btn_grooming, btn_food, btn_accessories;
 
-
+    dbTransaksi dbTransaksi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Session user = new Session(this);
         String username = user.getUsername();
+        dbTransaksi = new dbTransaksi(this);
 
         tv_username = findViewById(R.id.username);
         tv_username.setText("Hello, "+username);

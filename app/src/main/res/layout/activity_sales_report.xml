@@ -102,7 +102,7 @@
                 <TextView
                     android:text="Service Type"
                     android:padding="6dp"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:width="120dp"/>
 
                 <TextView
@@ -113,9 +113,10 @@
 
             </TableRow>
 
-            <androidx.recyclerview.widget.RecyclerView>
-
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_data_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             </androidx.recyclerview.widget.RecyclerView>
 
         </TableLayout>

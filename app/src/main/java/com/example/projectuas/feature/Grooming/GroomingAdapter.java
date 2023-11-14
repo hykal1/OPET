@@ -40,7 +40,7 @@ public class GroomingAdapter extends RecyclerView.Adapter<GroomingAdapter.CardVi
 
         holder.tvName.setText(grooming.getName_groom());
         holder.tvDesc.setText(grooming.getDesc_groom());
-        holder.tvPrice.setText(grooming.getPrice_groom());
+        holder.tvPrice.append(String.valueOf("Rp. "+grooming.getPrice_groom()));
         holder.btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
