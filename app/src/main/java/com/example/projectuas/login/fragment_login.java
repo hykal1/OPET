@@ -1,6 +1,5 @@
 package com.example.projectuas.login;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.projectuas.DataBase.dbUser;
 import com.example.projectuas.MainActivity;
-import com.example.projectuas.MainAdmin;
+import com.example.projectuas.admin.MainAdmin;
 import com.example.projectuas.R;
 import com.example.projectuas.Session.Session;
 import com.example.projectuas.object.User;

@@ -23,6 +23,12 @@
             android:exported="false" />
         <activity
             android:name=".sales_report"
+            android:exported="false"/>
+        <activity
+            android:name=".navbar.BottomNav"
+            android:exported="false" />
+        <activity
+            android:name=".admin.sales_report"
             android:exported="false" />
         <activity
             android:name=".feature.food.FoodActivity"
@@ -37,7 +43,7 @@
             android:name=".feature.Grooming.GroomingActivity"
             android:exported="false" />
         <activity
-            android:name=".MainAdmin"
+            android:name=".admin.MainAdmin"
             android:exported="false" />
         <activity
             android:name=".login.SignIn"
