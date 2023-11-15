@@ -16,10 +16,11 @@ import java.util.Calendar;
 
 public class dbTransaksi extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "db_Transaksi";
-    public static final String KEY_LAYANAN = "Layanan";
     public static final String TABLE_TRANSAKSI = "Transaksi_Veterinary";
+    public static final String TABLE_TRANSAKSI2 = "Transaksi_Grooming";
     public static final int DATABASE_VERSION = 1;
     public static final String CREATE_LAYANAN = "CREATE TABLE "+ TABLE_TRANSAKSI + "(Id INTEGER PRIMARY KEY AUTOINCREMENT, " + "Id_vet INTEGER, Id_user INTEGER, Jenis_layanan TEXT, biaya INTEGER, bulan INTEGER);";
+    public static final String CREATE_LAYANAN2 = "CREATE TABLE "+ TABLE_TRANSAKSI2 + "(Id INTEGER PRIMARY KEY AUTOINCREMENT, " + "Id_groom INTEGER, Id_user INTEGER, Jenis_layanan TEXT, biaya INTEGER, bulan INTEGER);";
 
     public dbTransaksi(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -29,6 +30,7 @@ public class dbTransaksi extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_LAYANAN);
+        db.execSQL(CREATE_LAYANAN2);
 
     }
 
@@ -50,6 +52,19 @@ public class dbTransaksi extends SQLiteOpenHelper {
         values.put("biaya", biaya);
         values.put("bulan", bulan);
         db.insert(TABLE_TRANSAKSI, null, values);
+    }
+
+    public void addGroom(int id_groom, int id_user, String jenis_layanan, int biaya){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Calendar calendar = Calendar.getInstance();
+        int bulan = calendar.get(Calendar.MONTH)+1;
+        ContentValues values = new ContentValues();
+        values.put("Id_groom", id_groom);
+        values.put("Id_user", id_user);
+        values.put("Jenis_layanan", jenis_layanan);
+        values.put("biaya", biaya);
+        values.put("bulan", bulan);
+        db.insert(TABLE_TRANSAKSI2, null, values);
     }
 
 
