@@ -104,7 +104,7 @@ public class VeterinaryBookingConsultActivity extends AppCompatActivity implemen
         });
 
         // Menambahkan tombol negatif (biasanya Batal atau Batalkan)
-        builder.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 // Aksi yang akan dilakukan saat tombol negatif diklik

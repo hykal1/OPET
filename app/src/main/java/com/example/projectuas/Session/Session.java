@@ -32,6 +32,13 @@ public class Session {
     public int getId(){
         return sharedPreferences.getInt(KEY_ID,0);
     }
+    public String getEmail(){
+        return sharedPreferences.getString(KEY_EMAIL, "");
+    }
+
+    public String getPassword(){
+        return sharedPreferences.getString(KEY_PASSWORD, "");
+    }
 
     public boolean isLoggedIn() {
         return sharedPreferences.contains(KEY_USERNAME);
