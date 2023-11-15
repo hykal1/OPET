@@ -1,10 +1,18 @@
 package com.example.projectuas;
 
+import static android.text.TextUtils.replace;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -14,10 +22,17 @@ import com.example.projectuas.feature.Veterinary.Veterinary;
 import com.example.projectuas.feature.Veterinary.VeterinaryActivity;
 import com.example.projectuas.feature.food.FoodActivity;
 import com.example.projectuas.login.login;
+import com.example.projectuas.navbar.HistoryFragment;
+import com.example.projectuas.navbar.HomeFragment;
+import com.example.projectuas.navbar.ProfileFragment;
+import com.example.projectuas.profile.ProfileActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     TextView tv_username;
     ImageButton btn_veterinary, btn_grooming, btn_food, btn_accessories;
+    private BottomNavigationView bottomNavigationView;
+    private FrameLayout frameLayout;
 
 
     @Override
@@ -39,8 +54,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_food.setOnClickListener(this);
         btn_grooming.setOnClickListener(this);
 
+        bottomNavigationView = findViewById(R.id.bottom_navView);
+        frameLayout = findViewById(R.id.frameLayout_Nav);
 
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.navHome){
+                    loadFragment(new HomeFragment(), false);
+                } else if (itemId == R.id.navHistory){
+                    loadFragment(new HistoryFragment(), false);
+                } else if (itemId == R.id.navProfile){
+                    loadFragment(new ProfileFragment(), false);
+                }
+                return true;
+            }
+        });
+
+        loadFragment(new HomeFragment(), true);
     }
 
     @Override
@@ -55,5 +89,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent food = new Intent (MainActivity.this, FoodActivity.class);
             startActivity(food);
         }
+    }
+
+    private void loadFragment(Fragment fragment, boolean isAppInitialized) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if (isAppInitialized){
+            fragmentTransaction.add(R.id.frameLayout_Nav, fragment);
+        } else {
+            fragmentTransaction.replace(R.id.frameLayout_Nav, fragment);
+        }
+
+        fragmentTransaction.replace(R.id.frameLayout_Nav, fragment);
+        fragmentTransaction.commit();
     }
 }

@@ -22,12 +22,6 @@
             android:name=".feature.Grooming.GroomingBookingActivity"
             android:exported="false" />
         <activity
-            android:name=".sales_report"
-            android:exported="false"/>
-        <activity
-            android:name=".navbar.BottomNav"
-            android:exported="false" />
-        <activity
             android:name=".admin.sales_report"
             android:exported="false" />
         <activity
