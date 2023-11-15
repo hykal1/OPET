@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomNavigationView = findViewById(R.id.bottom_navView);
         frameLayout = findViewById(R.id.frameLayout_Nav);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        /*bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        loadFragment(new HomeFragment(), true);
+        loadFragment(new HomeFragment(), true);*/
     }
 
     @Override
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void loadFragment(Fragment fragment, boolean isAppInitialized) {
+    /*private void loadFragment(Fragment fragment, boolean isAppInitialized) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -105,5 +105,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         fragmentTransaction.replace(R.id.frameLayout_Nav, fragment);
         fragmentTransaction.commit();
-    }
+    }*/
 }
