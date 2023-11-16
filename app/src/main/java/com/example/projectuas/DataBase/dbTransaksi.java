@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.projectuas.admin.Report_Data;
 import com.example.projectuas.feature.Grooming.GroomingData;
 import com.example.projectuas.object.Layanan;
 import com.example.projectuas.object.ListLayanan;
@@ -65,6 +66,41 @@ public class dbTransaksi extends SQLiteOpenHelper {
         values.put("biaya", biaya);
         values.put("bulan", bulan);
         db.insert(TABLE_TRANSAKSI2, null, values);
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<Report_Data> get_report(String service_type, int month){
+        ArrayList<Report_Data> result = new ArrayList<>();
+        if(service_type.equals("vet")){
+            String filterQuery = "SELECT Id_vet, Jenis_layanan, sum(biaya) as sum_prices from Transaksi_veterinary where bulan='" + month + "' group by jenis_layanan;";
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor c = db.rawQuery(filterQuery,null);
+            if(c.moveToFirst()){
+                do{
+                    Report_Data row_data = new Report_Data();
+                    row_data.setId(c.getInt(c.getColumnIndex("Id_vet")));
+                    row_data.setServices(c.getString(c.getColumnIndex("Jenis_layanan")));
+                    row_data.setSum(c.getInt(c.getColumnIndex("sum_prices")));
+                    result.add(row_data);
+                }while(c.moveToNext());
+                return result;
+            }
+        }else if(service_type.equals("groom")){
+            String filterQuery = "SELECT Id_groom, Jenis_layanan, sum(biaya) as sum_prices from Transaksi_grooming where bulan='" + month + "'group by jenis_layanan;";
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor c = db.rawQuery(filterQuery,null);
+            if(c.moveToFirst()){
+                do{
+                    Report_Data row_data = new Report_Data();
+                    row_data.setId(c.getInt(c.getColumnIndex("Id_groom")));
+                    row_data.setServices(c.getString(c.getColumnIndex("Jenis_layanan")));
+                    row_data.setSum(c.getInt(c.getColumnIndex("sum_prices")));
+                    result.add(row_data);
+                }while(c.moveToFirst());
+                return result;
+            }
+        }
+        return result;
     }
 
 
