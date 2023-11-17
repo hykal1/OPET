@@ -43,19 +43,68 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/type_veterinary"
-                android:layout_below="@+id/top_history"
-                android:layout_marginTop="16dp" />
+                android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/type_grooming"
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="History Veterinary"
+                        android:textStyle="bold"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/type_veterinary"
+                        android:layout_below="@+id/top_history"
+                        android:layout_marginTop="26dp" />
+
+                </FrameLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:elevation="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_menu_varian"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/top_history"
-                android:layout_marginTop="16dp" />
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="History Grooming"
+                        android:textStyle="bold"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/type_grooming"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/top_history"
+                        android:layout_marginTop="26dp" />
+
+                </FrameLayout>
+
+            </ScrollView>
 
         </LinearLayout>
 
