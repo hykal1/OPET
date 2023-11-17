@@ -44,6 +44,13 @@ public class Session {
         return sharedPreferences.contains(KEY_USERNAME);
     }
 
+    public void editSession(String username, String password){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USERNAME, username);
+        editor.putString(KEY_PASSWORD, password);
+        editor.apply();
+    }
+
     public void logout() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();

@@ -54,6 +54,37 @@ public class dbUser extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
+    public boolean updateUser(int id, String username, String newPassword){
+        String checkUsername = "SELECT * FROM User where user_name='" + username +"';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(checkUsername, null);
+        if(c.moveToFirst()){
+            int found_id;
+            do{
+                found_id = c.getInt(c.getColumnIndex(KEY_ID));
+                break;
+            }while(c.moveToNext());
+            if(found_id == id){
+                ContentValues values = new ContentValues();
+                values.put(KEY_NAME, username);
+                values.put(KEY_PASSWORD, newPassword);
+                db.update(TABLE_NAME, values, KEY_ID +" = ?", new String[]{String.valueOf(id)} );
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            ContentValues values = new ContentValues();
+            values.put(KEY_NAME, username);
+            values.put(KEY_PASSWORD, newPassword);
+            db.update(TABLE_NAME, values, KEY_ID +" = ?", new String[]{String.valueOf(id)} );
+            return true;
+        }
+
+
+    }
+
+    @SuppressLint("Range")
     public ArrayList<User> getAllUsers(){
         ArrayList<User> userArrayList = new ArrayList<>();
         String selectQuery = "SELECT * FROM "+ TABLE_NAME;

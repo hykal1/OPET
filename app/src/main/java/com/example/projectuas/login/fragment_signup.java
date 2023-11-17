@@ -96,19 +96,19 @@ public class fragment_signup extends Fragment {
 
 //                Set error jika terdapat form yang kosong
                 if(user_name.isEmpty()){
-                    userName.setError("Username Harus Diisi!");
+                    userName.setError("Username must filled!");
                     isEmpty = true;
                 }
                 if(user_email.isEmpty()){
-                    email.setError("Email Harus Diisi!");
+                    email.setError("Email must filled");
                     isEmpty = true;
                 }
                 if(user_password.isEmpty()){
-                    password.setError("Password Harus Diisi!");
+                    password.setError("Password must filled!");
                     isEmpty = true;
                 }
                 if(user_conf_password.isEmpty()){
-                    confirm_password.setError("Password Harus Diisi!");
+                    confirm_password.setError("Password must filled");
                     isEmpty = true;
                 }
 
@@ -122,7 +122,7 @@ public class fragment_signup extends Fragment {
                             User online = dbUser.getAccount(user_name, user_password);
                             Session user = new Session(getContext());
                             user.saveSession(online.getId(),user_name, user_email, user_password);
-                            Toast.makeText(getContext(), "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Create Account Success!", Toast.LENGTH_SHORT).show();
                             userName.setText("");
                             email.setText("");
                             password.setText("");
@@ -140,15 +140,15 @@ public class fragment_signup extends Fragment {
 
 //                            Username Sudah digunakan
                         }else if(check==1){
-                            userName.setError("Username sudah digunakan");
+                            userName.setError("Username taken!");
 
 //                            Email sudah digunakan
                         }else if(check==3){
-                            email.setError("Email sudah digunakan");
+                            email.setError("Email taken!");
                         }
 
                     }else{
-                        confirm_password.setError("PASSWORD TIDAK SESUAI");
+                        confirm_password.setError("INCORRECT PASSWORD!");
                     }
                 }
             }
