@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,6 +22,8 @@ import com.example.projectuas.Session.Session;
 import com.example.projectuas.feature.Grooming.GroomingActivity;
 import com.example.projectuas.feature.Veterinary.Veterinary;
 import com.example.projectuas.feature.Veterinary.VeterinaryActivity;
+import com.example.projectuas.feature.Veterinary.VeterinaryBookingConsultActivity;
+import com.example.projectuas.feature.Veterinary.VeterinaryData;
 import com.example.projectuas.feature.food.FoodActivity;
 import com.example.projectuas.login.login;
 import com.example.projectuas.navbar.HistoryFragment;
@@ -29,11 +32,16 @@ import com.example.projectuas.navbar.ProfileFragment;
 import com.example.projectuas.profile.ProfileActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     TextView tv_username;
-    ImageButton btn_veterinary, btn_grooming, btn_food, btn_accessories;
+    ImageButton btn_veterinary, btn_grooming, btn_food, btn_accessories, seeMore_vet, seeMore_groom, seeMore_food, seeMore_accessories ;
     private BottomNavigationView bottomNavigationView;
+    Button order_now, consult_1st, consult_2nd;
     private FrameLayout frameLayout;
+    ArrayList<Veterinary> veterinaries;
 
     dbTransaksi dbTransaksi;
     @Override
@@ -43,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Session user = new Session(this);
         String username = user.getUsername();
         dbTransaksi = new dbTransaksi(this);
+        veterinaries = VeterinaryData.getListData();
 
         tv_username = findViewById(R.id.username);
         tv_username.setText("Hello, "+username);
@@ -50,11 +59,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_grooming = findViewById(R.id.button_grooming_menu);
         btn_food = findViewById(R.id.button_food_menu);
         btn_accessories = findViewById(R.id.button_accessories_menu);
+        order_now = findViewById(R.id.order_now);
+        seeMore_food = findViewById(R.id.see_more_food);
+        seeMore_vet = findViewById(R.id.see_more_vet);
+        seeMore_accessories = findViewById(R.id.see_more_accessories);
+        seeMore_groom = findViewById(R.id.see_more_groom);
+        consult_1st = findViewById(R.id.consult_1st);
+        consult_2nd = findViewById(R.id.consult_2nd);
 
         btn_accessories.setOnClickListener(this);
         btn_veterinary.setOnClickListener(this);
         btn_food.setOnClickListener(this);
         btn_grooming.setOnClickListener(this);
+        order_now.setOnClickListener(this);
+        seeMore_groom.setOnClickListener(this);
+        seeMore_accessories.setOnClickListener(this);
+        seeMore_vet.setOnClickListener(this);
+        seeMore_food.setOnClickListener(this);
+        consult_1st.setOnClickListener(this);
+        consult_2nd.setOnClickListener(this);
 
         bottomNavigationView = findViewById(R.id.bottom_navView);
         frameLayout = findViewById(R.id.frameLayout_Nav);
@@ -81,15 +104,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.button_veterinary_menu) {
+        if (v.getId() == R.id.button_veterinary_menu || v.getId() == R.id.see_more_vet) {
             Intent veterinary = new Intent(MainActivity.this, VeterinaryActivity.class);
             startActivity(veterinary);
-        } else if (v.getId()==R.id.button_grooming_menu) {
+        } else if (v.getId()==R.id.button_grooming_menu || v.getId()==R.id.order_now || v.getId() == R.id.see_more_groom) {
             Intent grooming = new Intent(MainActivity.this, GroomingActivity.class);
             startActivity(grooming);
-        } else if(v.getId()==R.id.button_food_menu){
+        } else if(v.getId()==R.id.button_food_menu || v.getId() == R.id.see_more_food){
             Intent food = new Intent (MainActivity.this, FoodActivity.class);
             startActivity(food);
+        } else if (v.getId()==R.id.consult_1st) {
+            Veterinary first = veterinaries.get(3);
+            Intent bookVet = new Intent(this, VeterinaryBookingConsultActivity.class);
+            bookVet.putExtra(VeterinaryBookingConsultActivity.EXTRA_VETERINARY, first);
+            startActivity(bookVet);
+        }else if (v.getId()==R.id.consult_2nd) {
+            Veterinary first = veterinaries.get(2);
+            Intent bookVet = new Intent(this, VeterinaryBookingConsultActivity.class);
+            bookVet.putExtra(VeterinaryBookingConsultActivity.EXTRA_VETERINARY, first);
+            startActivity(bookVet);
         }
     }
 

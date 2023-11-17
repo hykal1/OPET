@@ -68,6 +68,7 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="34dp"
+                        android:id="@+id/order_now"
                         android:text="Order Now"
                         android:layout_marginTop="125dp"
                         android:textSize="12sp"
@@ -158,6 +159,7 @@
                         />
 
                     <ImageButton
+                        android:id="@+id/see_more_vet"
                         android:contentDescription="See More"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -214,7 +216,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rp60000"
+                            android:text="Rp70000"
                             android:textSize="12sp"
                             android:textStyle="bold"
                             android:layout_marginLeft="90dp"
@@ -222,6 +224,7 @@
                             />
 
                         <Button
+                            android:id="@+id/consult_1st"
                             android:layout_width="63dp"
                             android:layout_height="30dp"
                             android:text="Consult"
@@ -282,7 +285,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rp60000"
+                            android:text="Rp70000"
                             android:textSize="12sp"
                             android:textStyle="bold"
                             android:layout_marginLeft="90dp"
@@ -292,7 +295,7 @@
                         <Button
                             android:layout_width="63dp"
                             android:layout_height="30dp"
-
+                            android:id="@+id/consult_2nd"
                             android:text="Consult"
                             android:background="@drawable/bg_button_chat"
                             android:padding="8dp"
@@ -325,6 +328,7 @@
 
                     <ImageButton
                         android:contentDescription="See More"
+                        android:id="@+id/see_more_groom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -497,6 +501,7 @@
                         />
 
                     <ImageButton
+                        android:id="@+id/see_more_food"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -717,13 +722,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Animal Toys"
+                        android:text="Accessories"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         />
 
                     <ImageButton
+                        android:id="@+id/see_more_accessories"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"

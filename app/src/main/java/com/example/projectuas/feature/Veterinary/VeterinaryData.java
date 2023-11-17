@@ -58,7 +58,7 @@ public class VeterinaryData {
             "A Veterinary Orthopedic Specialist is a highly skilled professional who specializes in diagnosing and treating musculoskeletal issues in animals, with a particular focus on bones, joints, and soft tissues. They are trained to address conditions such as fractures, ligament injuries, and joint disorders, providing specialized orthopedic care to enhance the mobility and comfort of their animal patients."
     };
 
-    static ArrayList<Veterinary> getListData(){
+    public static ArrayList<Veterinary> getListData(){
         ArrayList<Veterinary> list = new ArrayList<>();
         for(int position = 0; position<VetNames.length;position++){
             Veterinary veterinary = new Veterinary();
