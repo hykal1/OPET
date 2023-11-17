@@ -1,70 +1,72 @@
 package com.example.projectuas.feature.toys;
+import com.example.projectuas.R;
+
 import java.util.ArrayList;
 
 public class ToysData {
     private static int[] toysImage = {
-            R.drawable.food1,
-            R.drawable.food2,
-            R.drawable.food3,
-            R.drawable.food4,
-            R.drawable.food5,
-            R.drawable.food6,
-            R.drawable.food7,
-            R.drawable.food8,
-            R.drawable.food9,
-            R.drawable.food10,
+            R.drawable.toy1,
+            R.drawable.toy2,
+            R.drawable.toy3,
+            R.drawable.toy4,
+            R.drawable.toy5,
+            R.drawable.toy6,
+            R.drawable.toy7,
+            R.drawable.toy8,
+            R.drawable.toy9,
+            R.drawable.toy10
 
     };
 
     private static String[] toysName = {
-            "Whiskas Dry 1.2 kg",
-            "Yoliverto Suplemen",
-            "Yocardia Suplemen",
-            "Yochito Suplemen",
-            "Whiskas",
-            "Sheba Can",
-            "Temptations",
-            "Sheba Melty",
-            "Sheba Pouch",
-            "Royal Canin Sterilised"
+            "Pet Dog Rubber Chew Toys",
+            "Cat Tower Toy",
+            "Pet Dog Rubber Chew Toys",
+            "Mainan Terowongan Hamster",
+            "Dot Teeth Dog Toys",
+            "Cat Kitten Toy Teaser",
+            "Pawify Multifunctional",
+            "Pet Dog Dental Care Brushing",
+            "Boneka Catnip",
+            "Laser Mainan Kucing Anjing"
     };
 
     private static String[] toysDesc = {
-            "Makanan Kucing Kering rasa Ocean Fish",
-            "Makanan Hewan Untuk Kesehatan Hati Liver",
-            "Makanan Hewan Untuk Kesehatan Jantung",
-            "Makanan untuk kesehatan Ginjal Anjing dan Kucing",
-            "Makanan Kucing Kering 480gr - Tuna",
-            "Makanan Kucing Basah Can 85gr",
-            "Snack Kucing Purrrr-ee 48 gr",
-            "Snack Kucing rasa Salmon,Tuna Mix & Seafood 48gr",
-            "Makanan Anak Kucing Basah rasa Chicken 70gr",
-            "Makanan Kucing Dewasa Steril Dry 400gr"
+            "Mainan gigit karet anjing hewan",
+            "Mainan menara kucing",
+            "Mainan gigit karet anjing hewan",
+            "Diameter 5.5 cm",
+            "Mainan gigitan anjing empeng",
+            "Mainan kucing tikus bergerak",
+            "Mainan tali hewan bulat",
+            "Mainan & pembersih gigi anjing",
+            "Boneka Mainan Kesukaan Kucing",
+            "Untuk mainan anabul imut-imut"
     };
 
     private static String[] toysTokped = {
-            "https://www.tokopedia.com/whiskas/whiskas-dry-1-2-kg-makanan-kucing-kering-rasa-ocean-fish?extParam=ivf%3Dfalse%26src%3Dsearch",
-            "https://www.tokopedia.com/hewania-shop/yoliverto-suplemen-makanan-hewan-untuk-kesehatan-hati-liver",
-            "https://www.tokopedia.com/hewania-shop/yocardia-suplemen-makanan-hewan-untuk-kesehatan-jantung",
-            "https://www.tokopedia.com/hewania-shop/yochito-suplemen-makanan-hewan",
-            "https://www.tokopedia.com/whiskas/whiskas-makanan-kucing-kering-480gr-tuna?extParam=src%3Dshop%26whid%3D26751",
-            "https://www.tokopedia.com/whiskas/sheba-makanan-kucing-basah-can-85gr-tuna-salmon?extParam=src%3Dshop%26whid%3D26751",
-            "https://www.tokopedia.com/whiskas/temptations-snack-kucing-purrr-ee-48gr-salmon-cheese?extParam=src%3Dshop%26whid%3D26751",
-            "https://www.tokopedia.com/whiskas/sheba-melty-snack-kucing-rasa-salmon-tuna-mix-seafood-48gr-isi-3?extParam=src%3Dshop%26whid%3D26751",
-            "https://www.tokopedia.com/whiskas/sheba-pouch-makanan-anak-kucing-basah-rasa-chicken-70gr-isi-6?extParam=src%3Dshop%26whid%3D26751",
-            "https://www.tokopedia.com/royalcaninid/royal-canin-sterilised-37-makanan-kucing-dewasa-steril-dry-400gr"
+            "https://www.tokopedia.com/javapetcotangerang/mainan-gigit-karet-anjing-hewan-pet-dog-rubber-chew-toys-toy13-merah-muda",
+            "https://www.tokopedia.com/javapetcotangerang/cat-tower-toy-mainan-menara-kucing-toy01-hijau",
+            "https://www.tokopedia.com/javapetcotangerang/mainan-gigit-karet-anjing-hewan-pet-dog-rubber-chew-toys-toy14-merah-muda",
+            "https://www.tokopedia.com/javapetcotangerang/mainan-terowongan-hamster-5-5-x07-hijau",
+            "https://www.tokopedia.com/javapetcotangerang/gigitan-anjing-empeng-gigitan-anjing-dot-teeth-dog-toys-mainan-toy11-biru?extParam=src%3Dshop%26whid%3D3510834",
+            "https://www.tokopedia.com/javapetcotangerang/mainan-kucing-interaktif-cat-kitten-toy-teaser-catch-the-mouse-toy6?extParam=src%3Dshop%26whid%3D3510834",
+            "https://www.tokopedia.com/petpalaceindonesia/pawify-multifunctional-pet-molar-dog-bite-toy-mainan-tali-hewan-bulat-bulat-merah-putih?extParam=src%3Dshop%26whid%3D11656025",
+            "https://www.tokopedia.com/petpalaceindonesia/pawify-pet-dog-dental-care-brushing-toy-mainan-pembersih-gigi-anjing-m-pink?extParam=src%3Dshop%26whid%3D11656025",
+            "https://www.tokopedia.com/babahcathouse/boneka-catnip-kecil-kucing-mainan-cat-nip-toys-bantal-gigitan-toy-lucu-random?extParam=src%3Dshop%26whid%3D6155727",
+            "https://www.tokopedia.com/babahcathouse/laser-mainan-kucing-anjing-murah-cat-toy-toys-interaktif"
     };
     private static String[] toysShopee = {
-            "https://shopee.co.id/-Special-Collab-Whiskas-Makanan-Kucing-Kering-1.2-kg-i.76617760.22960044310?xptdk=dc6e1f6d-a63a-4b30-b8fc-03bc247eddac",
-            "https://shopee.co.id/Yoliverto-Suplemen-Makanan-Hewan-Kesehatan-Hati-Liver-Anjing-Kucing-i.916020114.23211745713",
-            "https://shopee.co.id/Yocardia-Cardiac-Treats-Suplemen-Untuk-Kesehatan-Jantung-Hewan-i.224516847.17334110350",
-            "https://shopee.co.id/Yochito-Suplemen-Makanan-Hewan-Kesehatan-Ginjal-Anjing-Kucing-i.214578974.22941267352",
-            "https://shopee.co.id/Whiskas-Makanan-Kucing-Kering-480-gr-i.76617760.1277530257?xptdk=675516b2-6083-458e-8d23-2d0244c14a42",
-            "https://shopee.co.id/Sheba-Can-Makanan-Kucing-Basah-Premium-85-gr-i.76617760.2004494199?sp_atk=74f2d0cf-79d3-424b-a626-3e8124dda7b5&xptdk=74f2d0cf-79d3-424b-a626-3e8124dda7b5",
-            "https://shopee.co.id/Temptations-Snack-Kucing-Purrrr-ee-48-gr-i.76617760.12121535796?sp_atk=a75e607c-1684-4603-9359-0bf9af782c4b&xptdk=a75e607c-1684-4603-9359-0bf9af782c4b",
-            "https://shopee.co.id/Sheba-Melty-Snack-Kucing-Basah-Multivariant-48-gr-Isi-3-i.76617760.9042189934?sp_atk=8ab6ba53-18f4-4069-a6c6-c0ab58ef7108&xptdk=8ab6ba53-18f4-4069-a6c6-c0ab58ef7108",
-            "https://shopee.co.id/Sheba-Pouch-Junior-Makanan-Anak-Kucing-Basah-rasa-Chicken-70-gr-Isi-6-i.76617760.10226973656?sp_atk=e4efa85f-c0a3-403c-b53f-a8d0e2393a57&xptdk=e4efa85f-c0a3-403c-b53f-a8d0e2393a57",
-            "https://shopee.co.id/Royal-Canin-Sterilised-Adult-(0.4kg)-Dry-Makanan-Kucing-Dewasa-Feline-Health-Nutrition-i.91681758.7016464240?sp_atk=3487e064-56be-454b-b5e3-61bc22cba3dd&xptdk=3487e064-56be-454b-b5e3-61bc22cba3dd"
+            "https://shopee.co.id/Mainan-gigit-karet-anjing-hewan-pet-dog-rubber-chew-toys-TOY13-i.503688332.17075161577?sp_atk=41388133-3c43-45a8-92ed-37fdf5ef93b1&xptdk=41388133-3c43-45a8-92ed-37fdf5ef93b1",
+            "https://shopee.co.id/Cat-Tower-Toy-Mainan-Menara-Kucing-TOY01-i.503688332.13628189841?sp_atk=7d2055c4-9b5b-4009-b86a-8453f402b5c2&xptdk=7d2055c4-9b5b-4009-b86a-8453f402b5c2",
+            "https://shopee.co.id/Mainan-gigit-karet-anjing-hewan-pet-dog-rubber-chew-toys-TOY14-i.503688332.12894074392?sp_atk=020f7bdf-ab2f-40f0-83b1-db21b9a858b8&xptdk=020f7bdf-ab2f-40f0-83b1-db21b9a858b8",
+            "https://shopee.co.id/Mainan-Terowongan-Hamster-5.5-X07-i.503688332.12528149727?sp_atk=012c106a-8ff6-409f-bfea-1163f847c86d&xptdk=012c106a-8ff6-409f-bfea-1163f847c86d",
+            "https://shopee.co.id/Gigitan-Anjing-Empeng-Gigitan-Anjing-Dot-Teeth-Dog-Toys-Mainan-TOY11-i.503688332.18712008432?sp_atk=9c16d588-5c2f-4485-b710-ba9a89e06dbc&xptdk=9c16d588-5c2f-4485-b710-ba9a89e06dbc",
+            "https://shopee.co.id/Mainan-Kucing-Interaktif-Cat-Kitten-Toy-Teaser-Catch-The-Mouse-TOY6-i.503688332.17375163247?sp_atk=76176112-ff5d-4c24-9b1e-80b0296bea8d&xptdk=76176112-ff5d-4c24-9b1e-80b0296bea8d",
+            "https://shopee.co.id/Pawify-Multifunctional-pet-molar-dog-bite-toy-Mainan-Tali-Hewan-Bulat-i.468840754.10928290221?sp_atk=d9cd254d-bdd7-41da-ad8b-db332869ce0f&xptdk=d9cd254d-bdd7-41da-ad8b-db332869ce0f",
+            "https://shopee.co.id/Pawify-Pet-Dog-Dental-Care-Brushing-Toy-Mainan-Pembersih-Gigi-Anjing-i.468840754.6197453338?sp_atk=228aa1a8-af86-4241-b0b4-eccd647de921&xptdk=228aa1a8-af86-4241-b0b4-eccd647de921",
+            "https://shopee.co.id/Boneka-Catnip-KECIL-Kucing-Mainan-Cat-Nip-Toys-Bantal-Gigitan-Penenang-Toy-Aksesoris-Doll-Murah-Lucu-i.167334541.8004288264?sp_atk=eb853af8-44ff-4424-8c7d-ec7bbdf8716e&xptdk=eb853af8-44ff-4424-8c7d-ec7bbdf8716e",
+            "https://shopee.co.id/LASER-Mainan-Kucing-Anjing-Murah-Scratcher-Bergerak-Berjalan-Cat-Toy-Toys-Untuk-Aksesoris-Interaktif-i.167334541.4137926969?sp_atk=8fe6d1cb-30ee-48d7-97b2-86391996e936&xptdk=8fe6d1cb-30ee-48d7-97b2-86391996e936"
     };
 
     static ArrayList<Toys> getListData() {
