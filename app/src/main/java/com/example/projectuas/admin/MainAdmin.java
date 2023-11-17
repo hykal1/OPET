@@ -44,8 +44,11 @@ public class MainAdmin extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.sales_report_menu){
-            Intent report = new Intent(MainAdmin.this, sales_report.class);
+            Intent report = new Intent(MainAdmin.this, SalesReport.class);
             startActivity(report);
+        } else if (v.getId()==R.id.incoming_order_menu) {
+            Intent order = new Intent(MainAdmin.this, IncomingOrder.class);
+            startActivity(order);
         } else if (v.getId()==R.id.logout) {
             tampilkanDialog();
         }

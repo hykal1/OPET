@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/light_cream"
-    tools:context=".admin.SalesReport">
+    tools:context=".admin.IncomingOrder">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:paddingStart="16dp">
 
         <ImageButton
-            android:id="@+id/arrowBackButton_sales"
+            android:id="@+id/arrowBackButton_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back"
@@ -24,11 +24,11 @@
             />
 
         <TextView
-            android:id="@+id/sales_report_text"
+            android:id="@+id/grooming"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
-            android:text="Sales Report"
+            android:text="Incoming Order"
             android:textSize="24sp"
             android:textColor="@color/black"
             android:lineSpacingExtra="-6sp"
@@ -49,21 +49,21 @@
 
         <ImageButton
             android:elevation="6dp"
-            android:contentDescription="Report Veterinary"
-            android:id="@+id/report_veterinary"
+            android:contentDescription="Incoming Order Veterinary"
+            android:id="@+id/incoming_order_veterinary"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@drawable/report_veterinary_img"
+            android:background="@drawable/order_veterinary_img"
             />
 
         <ImageButton
             android:elevation="6dp"
-            android:contentDescription="Report Grooming"
+            android:contentDescription="Incoming Order Grooming"
             android:layout_marginLeft="20dp"
-            android:id="@+id/report_grooming"
+            android:id="@+id/incoming_order_grooming"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@drawable/report_grooming_img"
+            android:background="@drawable/order_grooming_img"
             />
 
     </LinearLayout>
