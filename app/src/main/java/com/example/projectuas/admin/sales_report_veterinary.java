@@ -38,7 +38,7 @@ public class sales_report_veterinary extends AppCompatActivity implements View.O
             "October",
             "November",
             "December"
-};
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,13 +93,4 @@ public class sales_report_veterinary extends AppCompatActivity implements View.O
         }
     }
 
-    public int getMonth(String bulan){
-        String selected = month.getSelectedItem().toString();
-        for(int i=0; i<month_list.length; i++){
-            if(selected.equals(bulan)){
-                return i+1;
-            }
-        }
-        return -1;
-    }
 }
