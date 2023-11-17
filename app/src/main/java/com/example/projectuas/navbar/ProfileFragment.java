@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
@@ -18,17 +20,19 @@ import com.example.projectuas.R;
 import com.example.projectuas.Session.Session;
 import com.example.projectuas.feature.Veterinary.Veterinary;
 import com.example.projectuas.login.SignIn;
+import com.example.projectuas.profile.UpdateProfileActivity;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener{
     Session user;
     TextView username, email, password;
-    Button btn_logout;
+    Button btn_logout, btn_update;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         user = new Session(getContext());
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         btn_logout = view.findViewById(R.id.btn_profile_logout);
+        btn_update = view.findViewById(R.id.btn_profile_update);
 
         username = view.findViewById(R.id.tv_profile_username);
         username.setText(user.getUsername());
@@ -40,6 +44,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
 
         btn_logout.setOnClickListener(this);
+        btn_update.setOnClickListener(this);
         // Inflate the layout for this fragment
         return view;
     }
@@ -48,9 +53,27 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         if(v.getId()==R.id.btn_profile_logout){
             tampilkanDialog();
+        } else if (v.getId()==R.id.btn_profile_update) {
+            goToUpdateActivity();
         }
 
     }
+
+    private void goToUpdateActivity() {
+        Intent intent = new Intent(getActivity(), UpdateProfileActivity.class);
+        startActivity(intent);
+    }
+
+    /*private void goToMyFragment() {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        updetFragment myFragment = new updetFragment();
+        fragmentTransaction.replace(R.id.fragmentupdeto, myFragment);
+        fragmentTransaction.commit();
+    }*/
+
+
 
     private void tampilkanDialog() {
         // Membuat objek AlertDialog.Builder
@@ -74,7 +97,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
             }
         });
 
-        // Menambahkan tombol negatif (biasanya Batal atau Batalkan)
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
