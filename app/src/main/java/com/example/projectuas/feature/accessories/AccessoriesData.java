@@ -1,9 +1,9 @@
-package com.example.projectuas.feature.toys;
+package com.example.projectuas.feature.accessories;
 import com.example.projectuas.R;
 
 import java.util.ArrayList;
 
-public class ToysData {
+public class AccessoriesData {
     private static int[] toysImage = {
             R.drawable.toy1,
             R.drawable.toy2,
@@ -69,16 +69,16 @@ public class ToysData {
             "https://shopee.co.id/LASER-Mainan-Kucing-Anjing-Murah-Scratcher-Bergerak-Berjalan-Cat-Toy-Toys-Untuk-Aksesoris-Interaktif-i.167334541.4137926969?sp_atk=8fe6d1cb-30ee-48d7-97b2-86391996e936&xptdk=8fe6d1cb-30ee-48d7-97b2-86391996e936"
     };
 
-    static ArrayList<Toys> getListData() {
-        ArrayList<Toys> list = new ArrayList<>();
+    static ArrayList<Accessories> getListData() {
+        ArrayList<Accessories> list = new ArrayList<>();
         for (int pos = 0; pos < toysName.length; pos++) {
-            Toys toys = new Toys();
-            toys.setImageResourceId(toysImage[pos]);
-            toys.setName(toysName[pos]);
-            toys.setDesc(toysDesc[pos]);
-            toys.setLinkTokped(toysTokped[pos]);
-            toys.setLinkShopee(toysShopee[pos]);
-            list.add(toys);
+            Accessories accessories = new Accessories();
+            accessories.setImageResourceId(toysImage[pos]);
+            accessories.setName(toysName[pos]);
+            accessories.setDesc(toysDesc[pos]);
+            accessories.setLinkTokped(toysTokped[pos]);
+            accessories.setLinkShopee(toysShopee[pos]);
+            list.add(accessories);
         }
         return list;
     }

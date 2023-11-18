@@ -1,4 +1,4 @@
-package com.example.projectuas.feature.toys;
+package com.example.projectuas.feature.accessories;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,13 +16,13 @@ import com.example.projectuas.R;
 
 import java.util.List;
 
-public class ToysAdapter extends RecyclerView.Adapter<ToysAdapter.ViewHolder> {
+public class AccessoriesAdapter extends RecyclerView.Adapter<AccessoriesAdapter.ViewHolder> {
 
-    private List<Toys> toysList;
+    private List<Accessories> accessoriesList;
     private Context context;
 
-    public ToysAdapter(List<Toys> toysList, Context context) {
-        this.toysList = toysList;
+    public AccessoriesAdapter(List<Accessories> accessoriesList, Context context) {
+        this.accessoriesList = accessoriesList;
         this.context = context;
     }
 
@@ -35,19 +35,19 @@ public class ToysAdapter extends RecyclerView.Adapter<ToysAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Toys toys = toysList.get(position);
+        Accessories accessories = accessoriesList.get(position);
 
-        holder.imageView.setImageResource(toys.getImageResourceId());
-        holder.textViewName.setText(toys.getName());
-        holder.textViewDesc.setText(toys.getDesc());
+        holder.imageView.setImageResource(accessories.getImageResourceId());
+        holder.textViewName.setText(accessories.getName());
+        holder.textViewDesc.setText(accessories.getDesc());
 
         holder.textViewLinkTokped.setOnClickListener(view -> {
-            String url = toys.getLinkTokped();
+            String url = accessories.getLinkTokped();
             openLinkInBrowser(url);
         });
 
         holder.textViewLinkShopee.setOnClickListener(view -> {
-            String url = toys.getLinkShopee();
+            String url = accessories.getLinkShopee();
             openLinkInBrowser(url);
         });
     }
@@ -59,7 +59,7 @@ public class ToysAdapter extends RecyclerView.Adapter<ToysAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return toysList.size();
+        return accessoriesList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -1,7 +1,5 @@
 package com.example.projectuas;
 
-import static android.text.TextUtils.replace;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -25,14 +23,12 @@ import com.example.projectuas.feature.Veterinary.VeterinaryActivity;
 import com.example.projectuas.feature.Veterinary.VeterinaryBookingConsultActivity;
 import com.example.projectuas.feature.Veterinary.VeterinaryData;
 import com.example.projectuas.feature.food.FoodActivity;
-import com.example.projectuas.login.login;
+import com.example.projectuas.feature.accessories.AccessoriesActivity;
 import com.example.projectuas.navbar.HistoryFragment;
 import com.example.projectuas.navbar.HomeFragment;
 import com.example.projectuas.navbar.ProfileFragment;
-import com.example.projectuas.profile.ProfileActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -113,6 +109,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if(v.getId()==R.id.button_food_menu || v.getId() == R.id.see_more_food){
             Intent food = new Intent (MainActivity.this, FoodActivity.class);
             startActivity(food);
+        } else if(v.getId()==R.id.button_accessories_menu || v.getId() == R.id.see_more_accessories){
+            Intent accessories = new Intent (MainActivity.this, AccessoriesActivity.class);
+            startActivity(accessories);
         } else if (v.getId()==R.id.consult_1st) {
             Veterinary first = veterinaries.get(3);
             Intent bookVet = new Intent(this, VeterinaryBookingConsultActivity.class);

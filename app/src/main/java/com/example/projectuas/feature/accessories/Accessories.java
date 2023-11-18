@@ -1,6 +1,6 @@
-package com.example.projectuas.feature.toys;
+package com.example.projectuas.feature.accessories;
 
-public class Toys {
+public class Accessories {
     private String name;
     private String desc;
     private int imageResourceId;

@@ -43,6 +43,9 @@
             android:name=".feature.food.FoodActivity"
             android:exported="false" />
         <activity
+            android:name=".feature.accessories.AccessoriesActivity"
+            android:exported="false" />
+        <activity
             android:name=".feature.Veterinary.VeterinaryBookingConsultActivity"
             android:exported="false" />
         <activity
