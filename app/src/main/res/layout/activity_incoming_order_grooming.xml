@@ -71,6 +71,12 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:text="No"
+                            android:padding="6dp"
+                            android:gravity="center"
+                            android:width="3dp"/>
+
+                        <TextView
                             android:text="Id"
                             android:padding="6dp"
                             android:gravity="center"

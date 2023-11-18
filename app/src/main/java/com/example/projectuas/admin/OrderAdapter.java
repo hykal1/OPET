@@ -42,7 +42,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ListViewHold
     @Override
     public void onBindViewHolder(@NonNull OrderAdapter.ListViewHolder holder, int position) {
         OrderData current = orderDataList.get(position);
-        holder.number.setText(String.valueOf(position+1));
+        holder.number.setText(String.valueOf(current.getId()));
         holder.services.setText(current.getServices());
         holder.price.setText(String.valueOf(current.getPrices()));
         holder.confirm.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +70,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ListViewHold
         Button confirm;
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            number = itemView.findViewById(R.id.number);
+            number = itemView.findViewById(R.id.Id);
             services = itemView.findViewById(R.id.service_type);
             price = itemView.findViewById(R.id.price);
             confirm = itemView.findViewById(R.id.confirm);

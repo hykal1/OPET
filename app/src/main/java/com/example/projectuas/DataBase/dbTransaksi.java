@@ -83,6 +83,13 @@ public class dbTransaksi extends SQLiteOpenHelper {
         db.update("Transaksi_grooming", values,"Id" + " = ?", new String[]{String.valueOf(id)});
     }
 
+    public void completeVet(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("status", "complete");
+        db.update("Transaksi_veterinary", values,"Id" + " = ?", new String[]{String.valueOf(id)});
+    }
+
     @SuppressLint("Range")
     public ArrayList<Report_Data> get_report(String service_type, int month){
         ArrayList<Report_Data> result = new ArrayList<>();
@@ -120,7 +127,6 @@ public class dbTransaksi extends SQLiteOpenHelper {
 
 
 
-
     @SuppressLint("Range")
     public ArrayList<OrderData> getOrderDataGroom(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -139,6 +145,27 @@ public class dbTransaksi extends SQLiteOpenHelper {
         }
         return orderDataList;
     }
+
+
+    @SuppressLint("Range")
+    public ArrayList<OrderData> getOrderDataVet(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<OrderData> orderDataList = new ArrayList<>();
+        String orderData = "SELECT Id, Jenis_layanan, biaya as sum_prices from Transaksi_veterinary WHERE status = 'incomplete'";
+        Cursor c = db.rawQuery(orderData, null);
+        if(c.moveToFirst()){
+            do{
+                OrderData temp = new OrderData();
+                temp.setId(c.getInt(c.getColumnIndex("Id")));
+                temp.setServices(c.getString(c.getColumnIndex("Jenis_layanan")));
+                temp.setPrices(c.getInt(c.getColumnIndex("sum_prices")));
+                orderDataList.add(temp);
+            }while(c.moveToNext());
+            return orderDataList;
+        }
+        return orderDataList;
+    }
+
 
 
 
