@@ -13,7 +13,46 @@
         android:theme="@style/Theme.ProjectUAS"
         tools:targetApi="31">
         <activity
-            android:name=".teguhP"
+            android:name=".admin.IncomingOrderGrooming"
+            android:exported="false" />
+        <activity
+            android:name=".admin.IncomingOrderVeterinary"
+            android:exported="false" />
+        <activity
+            android:name=".admin.IncomingOrder"
+            android:exported="false" />
+        <activity
+            android:name=".admin.sales_report_grooming"
+            android:exported="false" />
+        <activity
+            android:name=".admin.SalesReport"
+            android:exported="false" />
+        <activity
+            android:name=".profile.UpdateProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.Grooming.GroomingBookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.sales_report_veterinary"
+            android:exported="false" />
+        <activity
+            android:name=".feature.food.FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.Veterinary.VeterinaryBookingConsultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.Veterinary.VeterinaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.Grooming.GroomingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.MainAdmin"
             android:exported="false" />
         <activity
             android:name=".login.SignIn"

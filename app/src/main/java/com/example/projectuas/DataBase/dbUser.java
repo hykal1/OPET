@@ -54,6 +54,37 @@ public class dbUser extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
+    public boolean updateUser(int id, String username, String newPassword){
+        String checkUsername = "SELECT * FROM User where user_name='" + username +"';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(checkUsername, null);
+        if(c.moveToFirst()){
+            int found_id;
+            do{
+                found_id = c.getInt(c.getColumnIndex(KEY_ID));
+                break;
+            }while(c.moveToNext());
+            if(found_id == id){
+                ContentValues values = new ContentValues();
+                values.put(KEY_NAME, username);
+                values.put(KEY_PASSWORD, newPassword);
+                db.update(TABLE_NAME, values, KEY_ID +" = ?", new String[]{String.valueOf(id)} );
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            ContentValues values = new ContentValues();
+            values.put(KEY_NAME, username);
+            values.put(KEY_PASSWORD, newPassword);
+            db.update(TABLE_NAME, values, KEY_ID +" = ?", new String[]{String.valueOf(id)} );
+            return true;
+        }
+
+
+    }
+
+    @SuppressLint("Range")
     public ArrayList<User> getAllUsers(){
         ArrayList<User> userArrayList = new ArrayList<>();
         String selectQuery = "SELECT * FROM "+ TABLE_NAME;
@@ -112,7 +143,6 @@ public class dbUser extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             do{
                 String temp_username = c.getString(c.getColumnIndex(KEY_NAME));
-                String temp_email = c.getString(c.getColumnIndex(KEY_EMAIL));
                 String temp_password = c.getString(c.getColumnIndex(KEY_PASSWORD));
                 if(username.equals(temp_username)){
                     if(password.equals(temp_password)){
@@ -128,6 +158,22 @@ public class dbUser extends SQLiteOpenHelper {
         }
 //        Return 0 jika akun tidak ditemukan
         return 0;
+    }
+
+    @SuppressLint("Range")
+    public User getAccount(String username, String password){
+        String selectQuery = "SELECT * FROM User where user_name='" +username + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+        User logging_in = new User();
+        if(c.moveToFirst()){
+            logging_in.setId((c.getInt(c.getColumnIndex(KEY_ID))));
+            logging_in.setUsername(c.getString(c.getColumnIndex(KEY_NAME)));
+            logging_in.setEmail(c.getString(c.getColumnIndex(KEY_EMAIL)));
+            logging_in.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
+        }
+        c.close();
+        return logging_in;
     }
 
 

@@ -1,12 +1,9 @@
 package com.example.projectuas.login;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +14,10 @@ import android.widget.Toast;
 
 import com.example.projectuas.DataBase.dbUser;
 import com.example.projectuas.MainActivity;
+import com.example.projectuas.admin.MainAdmin;
 import com.example.projectuas.R;
+import com.example.projectuas.Session.Session;
+import com.example.projectuas.object.User;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -96,19 +96,19 @@ public class fragment_signup extends Fragment {
 
 //                Set error jika terdapat form yang kosong
                 if(user_name.isEmpty()){
-                    userName.setError("Username Harus Diisi!");
+                    userName.setError("Username must filled!");
                     isEmpty = true;
                 }
                 if(user_email.isEmpty()){
-                    email.setError("Email Harus Diisi!");
+                    email.setError("Email must filled");
                     isEmpty = true;
                 }
                 if(user_password.isEmpty()){
-                    password.setError("Password Harus Diisi!");
+                    password.setError("Password must filled!");
                     isEmpty = true;
                 }
                 if(user_conf_password.isEmpty()){
-                    confirm_password.setError("Password Harus Diisi!");
+                    confirm_password.setError("Password must filled");
                     isEmpty = true;
                 }
 
@@ -119,26 +119,36 @@ public class fragment_signup extends Fragment {
                         int check = dbUser.checkAccount(user_name, user_password, user_email);
                         if(check == 0){
                             dbUser.addUserDetail(user_name, user_email, user_password);
-                            Toast.makeText(getContext(), "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show();
+                            User online = dbUser.getAccount(user_name, user_password);
+                            Session user = new Session(getContext());
+                            user.saveSession(online.getId(),user_name, user_email, user_password);
+                            Toast.makeText(getContext(), "Create Account Success!", Toast.LENGTH_SHORT).show();
                             userName.setText("");
                             email.setText("");
                             password.setText("");
                             confirm_password.setText("");
-                            Intent intent = new Intent(getActivity(), MainActivity.class);
-                            intent.putExtra(MainActivity.USERNAME, user_name);
-                            startActivity(intent);
+                            if(user_name.equals("admin") && user_password.equals("admin")){
+                                Intent intent = new Intent(getActivity(), MainAdmin.class);
+                                startActivity(intent);
+                                getActivity().finish();
+                            }else{
+                                Intent intent = new Intent(getActivity(), MainActivity.class);
+                                startActivity(intent);
+                                getActivity().finish();
+                            }
+
 
 //                            Username Sudah digunakan
                         }else if(check==1){
-                            userName.setError("Username sudah digunakan");
+                            userName.setError("Username taken!");
 
 //                            Email sudah digunakan
                         }else if(check==3){
-                            email.setError("Email sudah digunakan");
+                            email.setError("Email taken!");
                         }
 
                     }else{
-                        confirm_password.setError("PASSWORD TIDAK SESUAI");
+                        confirm_password.setError("INCORRECT PASSWORD!");
                     }
                 }
             }

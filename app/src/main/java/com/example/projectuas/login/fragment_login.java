@@ -1,6 +1,5 @@
 package com.example.projectuas.login;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,7 +14,10 @@ import android.widget.Toast;
 
 import com.example.projectuas.DataBase.dbUser;
 import com.example.projectuas.MainActivity;
+import com.example.projectuas.admin.MainAdmin;
 import com.example.projectuas.R;
+import com.example.projectuas.Session.Session;
+import com.example.projectuas.object.User;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,26 +88,36 @@ public class fragment_login extends Fragment {
                 boolean isEmpty = false;
 //                Set error jika terdapat form yang kosong
                 if(user_name.isEmpty()){
-                    userName.setError("Username Harus Diisi!");
+                    userName.setError("Username must filled!");
                     isEmpty = true;
                 }
                 if(user_password.isEmpty()){
-                    password.setError("Password Harus Diisi!");
+                    password.setError("Password must filled!");
                 }
 
 //                Jika Tidak kosong maka lakukan autentikasi
                 if(isEmpty == false){
-
                     int check = dbUser.loginAuthentication(user_name, user_password);
                     if(check==1){
-                        Toast.makeText(getContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        intent.putExtra(MainActivity.USERNAME, user_name);
-                        startActivity(intent);
+                        User online = dbUser.getAccount(user_name, user_password);
+                        Toast.makeText(getContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                        if(user_name.equals("admin") && user_password.equals("admin")){
+                            Intent intent = new Intent(getActivity(), MainAdmin.class);
+                            Session user = new Session(getContext());
+                            user.saveSession(online.getId(), online.getUsername(), online.getEmail(), online.getPassword());
+                            startActivity(intent);
+                            getActivity().finish();
+                        }else{
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            Session user = new Session(getContext());
+                            user.saveSession(online.getId(), online.getUsername(), online.getEmail(), online.getPassword());
+                            startActivity(intent);
+                            getActivity().finish();
+                        }
                     }else if (check==2){
-                        password.setError("Password Salah!");
+                        password.setError("Wrong Password!");
                     }else if(check==0){
-                        Toast.makeText(getContext(), "Akun tidak ditemukan!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Account not found!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
