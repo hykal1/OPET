@@ -44,9 +44,9 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/type_veterinary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/type_veterinary"
                 android:layout_below="@+id/top_history"
                 android:layout_marginTop="16dp" />
 
