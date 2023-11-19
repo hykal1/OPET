@@ -33,7 +33,7 @@ public class GroomingData {
             "Full grooming is a comprehensive pet care service that goes beyond basic grooming, encompassing activities such as bathing, hair trimming, nail clipping, and ear cleaning to ensure the overall cleanliness and aesthetic appearance of the animal. This thorough grooming process is particularly beneficial for long-haired breeds or those requiring more extensive care to maintain their coat health and hygiene."
     };
 
-    static ArrayList<Grooming> getListData(){
+    public static ArrayList<Grooming> getListData(){
         ArrayList<Grooming> list = new ArrayList<>();
         for(int position = 0; position<GroomNames.length;position++){
             Grooming grooming = new Grooming();

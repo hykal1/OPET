@@ -1,6 +1,7 @@
 package com.example.projectuas.navbar;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -19,8 +21,10 @@ import java.util.ArrayList;
 public class AdapterHistoryVet extends RecyclerView.Adapter<AdapterHistoryVet.ListViewRecycler> {
 
     ArrayList<DataHistoryVet> dataHistoryVets;
-    AdapterHistoryVet(ArrayList<DataHistoryVet> dataHistoryVets){
+    Context context;
+    AdapterHistoryVet(ArrayList<DataHistoryVet> dataHistoryVets, Context context){
         this.dataHistoryVets = dataHistoryVets;
+        this.context = context;
     }
 
     @NonNull
@@ -40,15 +44,15 @@ public class AdapterHistoryVet extends RecyclerView.Adapter<AdapterHistoryVet.Li
         holder.tv_price.setText(String.valueOf(current.getPrice()));
         holder.tv_desc.setText(current.getDesc());
         if(current.getStatus().equals("complete")){
-            holder.tv_status.setTextColor(R.color.green);
+            holder.tv_status.setTextColor(ContextCompat.getColor(context, R.color.green));
         }else {
-            holder.tv_status.setTextColor(R.color.red);
+            holder.tv_status.setTextColor(ContextCompat.getColor(context, R.color.red));
         }
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataHistoryVets.size();
     }
 
     public class ListViewRecycler extends RecyclerView.ViewHolder{

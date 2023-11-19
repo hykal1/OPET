@@ -9,9 +9,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.projectuas.admin.OrderData;
 import com.example.projectuas.admin.Report_Data;
+import com.example.projectuas.feature.Grooming.Grooming;
 import com.example.projectuas.feature.Grooming.GroomingData;
 import com.example.projectuas.feature.Veterinary.Veterinary;
 import com.example.projectuas.feature.Veterinary.VeterinaryData;
+import com.example.projectuas.navbar.DataHistoryGroom;
 import com.example.projectuas.navbar.DataHistoryVet;
 import com.example.projectuas.object.Layanan;
 import com.example.projectuas.object.ListLayanan;
@@ -198,6 +200,33 @@ public class dbTransaksi extends SQLiteOpenHelper {
         return listData;
     }
 
+
+    @SuppressLint("Range")
+    public ArrayList<DataHistoryGroom> getHistoryGroom(int id_user){
+        ArrayList<DataHistoryGroom> listData = new ArrayList<>();
+        String queryHistory = "SELECT * FROM Transaksi_grooming where Id_user = '"+ id_user + "';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(queryHistory, null);
+
+        if(c.moveToFirst()){
+            ArrayList<Grooming> groomData = GroomingData.getListData();
+            do{
+                DataHistoryGroom rowData = new DataHistoryGroom();
+                rowData.setId_groom(c.getInt(c.getColumnIndex("Id_groom")));
+                rowData.setNama(c.getString(c.getColumnIndex("Jenis_layanan")));
+                rowData.setPrice(c.getInt(c.getColumnIndex("biaya")));
+                rowData.setStatus(c.getString(c.getColumnIndex("status")));
+                for(int i=0; i<groomData.size(); i++){
+                    if(c.getInt(c.getColumnIndex("Id_groom"))==groomData.get(i).getId_groom()){
+                        rowData.setDesc(groomData.get(i).getDesc_groom());
+                    }
+                }
+                listData.add(rowData);
+            }while(c.moveToNext());
+            return listData;
+        }
+        return listData;
+    }
 
 
 

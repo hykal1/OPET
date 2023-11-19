@@ -1,14 +1,12 @@
 package com.example.projectuas.navbar;
 
-public class DataHistoryVet {
+public class DataHistoryGroom {
     int Id_user;
-    int Id_vet;
+    int Id_groom;
     String nama;
     String desc;
     int price;
     String status;
-    int gambar;
-
 
     public int getId_user() {
         return Id_user;
@@ -18,12 +16,12 @@ public class DataHistoryVet {
         Id_user = id_user;
     }
 
-    public int getId_vet() {
-        return Id_vet;
+    public int getId_groom() {
+        return Id_groom;
     }
 
-    public void setId_vet(int id_vet) {
-        Id_vet = id_vet;
+    public void setId_groom(int id_groom) {
+        Id_groom = id_groom;
     }
 
     public String getNama() {
@@ -57,14 +55,4 @@ public class DataHistoryVet {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public int getGambar() {
-        return gambar;
-    }
-
-    public void setGambar(int gambar) {
-        this.gambar = gambar;
-    }
-
-
 }
