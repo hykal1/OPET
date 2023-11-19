@@ -99,7 +99,7 @@ public class dbTransaksi extends SQLiteOpenHelper {
     public ArrayList<Report_Data> get_report(String service_type, int month){
         ArrayList<Report_Data> result = new ArrayList<>();
         if(service_type.equals("vet")){
-            String filterQuery = "SELECT Id_vet, Jenis_layanan, sum(biaya) as sum_prices from Transaksi_veterinary where bulan='" + month + "' + and status='complete' group by jenis_layanan order by Id_vet;";
+            String filterQuery = "SELECT Id_vet, Jenis_layanan, sum(biaya) as sum_prices from Transaksi_veterinary where bulan='" + month + "' and status='complete' group by jenis_layanan order by Id_vet;";
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor c = db.rawQuery(filterQuery,null);
             if(c.moveToFirst()){
@@ -113,7 +113,7 @@ public class dbTransaksi extends SQLiteOpenHelper {
                 return result;
             }
         }else if(service_type.equals("groom")){
-            String filterQuery = "SELECT Id_groom, Jenis_layanan, sum(biaya) as sum_prices from Transaksi_grooming where bulan='" + month + "' + and status='complete' group by jenis_layanan order by Id_groom;";
+            String filterQuery = "SELECT Id_groom, Jenis_layanan, sum(biaya) as sum_prices from Transaksi_grooming where bulan='" + month + "' and status='complete' group by jenis_layanan order by Id_groom;";
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor c = db.rawQuery(filterQuery,null);
             if(c.moveToFirst()){
