@@ -36,6 +36,14 @@
             tools:text="@string/groom_name"/>
 
         <TextView
+            android:id="@+id/tv_item_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="10sp"
+            tools:text="@string/status"/>
+
+        <TextView
             android:id="@+id/tv_item_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

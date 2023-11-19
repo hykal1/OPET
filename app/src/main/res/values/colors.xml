@@ -9,4 +9,6 @@
     <color name="cream">#FEEBDC</color>
     <color name="light_cream">#FFFBF3</color>
     <color name="bg_cream">#FEFAF2</color>
+    <color name="red">#F23333</color>
+    <color name="green">#03AC0E</color>
 </resources>
