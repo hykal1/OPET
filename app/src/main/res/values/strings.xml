@@ -26,6 +26,7 @@
     <string name="profile">Profile</string>
     <string name="update">Update</string>
     <string name="logout">Logout</string>
+    <string name="status">Status</string>
 
 
     <string-array name="Month_dropdown">
