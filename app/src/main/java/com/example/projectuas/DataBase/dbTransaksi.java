@@ -10,6 +10,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.projectuas.admin.OrderData;
 import com.example.projectuas.admin.Report_Data;
 import com.example.projectuas.feature.Grooming.GroomingData;
+import com.example.projectuas.feature.Veterinary.Veterinary;
+import com.example.projectuas.feature.Veterinary.VeterinaryData;
+import com.example.projectuas.navbar.DataHistoryVet;
 import com.example.projectuas.object.Layanan;
 import com.example.projectuas.object.ListLayanan;
 
@@ -164,6 +167,35 @@ public class dbTransaksi extends SQLiteOpenHelper {
             return orderDataList;
         }
         return orderDataList;
+    }
+
+
+    @SuppressLint("Range")
+    public ArrayList<DataHistoryVet> getHistoryVet(int id_user){
+        ArrayList<DataHistoryVet> listData = new ArrayList<>();
+        String queryHistory = "SELECT * FROM Transaksi_veterinary where Id_user = '"+ id_user + "';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(queryHistory, null);
+
+        if(c.moveToFirst()){
+            ArrayList<Veterinary> vetData = VeterinaryData.getListData();
+            do{
+                DataHistoryVet rowData = new DataHistoryVet();
+                rowData.setId_vet(c.getInt(c.getColumnIndex("Id_vet")));
+                rowData.setNama(c.getString(c.getColumnIndex("Jenis_layanan")));
+                rowData.setPrice(c.getInt(c.getColumnIndex("biaya")));
+                rowData.setStatus(c.getString(c.getColumnIndex("status")));
+                for(int i=0; i<vetData.size(); i++){
+                    if(c.getInt(c.getColumnIndex("Id_vet"))==vetData.get(i).getId_vet()){
+                        rowData.setDesc(vetData.get(i).getDesc_vet());
+                        rowData.setGambar(vetData.get(i).getPhoto());
+                    }
+                }
+                listData.add(rowData);
+            }while(c.moveToNext());
+            return listData;
+        }
+        return listData;
     }
 
 

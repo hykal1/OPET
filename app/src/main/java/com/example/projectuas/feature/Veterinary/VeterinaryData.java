@@ -31,7 +31,11 @@ public class VeterinaryData {
     };
 
     private static int[] VetIds = {
-            1,2,3,4,5
+            1,
+            2,
+            3,
+            4,
+            5
     };
 
     private static int[] VetImages = {
