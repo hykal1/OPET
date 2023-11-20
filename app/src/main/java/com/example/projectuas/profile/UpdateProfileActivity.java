@@ -95,6 +95,7 @@ public class UpdateProfileActivity extends AppCompatActivity implements View.OnC
             if(!newPassword.equals(confirmPassword)){
                 new_password.setError("NOT MATCHED!");
                 confirm_password.setError("NOT MATCHED!");
+                isEmpty=true;
             }
 
             if(isEmpty == false){
