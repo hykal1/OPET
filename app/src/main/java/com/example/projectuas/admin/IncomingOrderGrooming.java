@@ -33,7 +33,6 @@ public class IncomingOrderGrooming extends AppCompatActivity implements View.OnC
         orderDatalist = new ArrayList<>();
         orderDatalist = dbTransaksi.getOrderDataGroom();
         adapter = new OrderAdapter(orderDatalist);
-        Toast.makeText(this, ""+adapter.getItemCount(), Toast.LENGTH_SHORT).show();
 
         rv_groom.setHasFixedSize(true);
         rv_groom.setLayoutManager(new LinearLayoutManager(this));
